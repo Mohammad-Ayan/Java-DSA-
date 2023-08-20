@@ -66,9 +66,12 @@ class TommyVecetti{
 }
 
 class Circle{
-    int radius;
-    public int area(){
-        return 22/7*
+    float radius;
+    public float area(){
+        return 22/7*(radius*radius);
+    }
+    public float circumference(){
+        return 2*22/7*radius;
     }
 
 }
@@ -77,7 +80,7 @@ class Circle{
 public class practiceSet {
 
 public static void main(String[] args) {
-/*
+
 // Ques 1
     Employee jerry = new Employee();
     jerry.salary = 345;
@@ -109,12 +112,15 @@ TommyVecetti game = new TommyVecetti();
 game.fire();
 game.hit();
 game.run(); 
-*/
-// Ques6
 
+//Ques6
+
+Circle rCircle = new Circle();
+rCircle.radius = 4;
+System.out.println(rCircle.area() +"sq");
+System.out.println(rCircle.circumference());
 
 
 }
     }
-
 

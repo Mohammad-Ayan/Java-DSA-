@@ -34,6 +34,7 @@ public class AccessModifierPracSet {
         return height;
     }
 
+<<<<<<< HEAD
 
     public double Volumeofcylinder(){
     return 3.142*radius*radius*height;
@@ -45,17 +46,24 @@ public class AccessModifierPracSet {
 
 
 
+=======
+    }
+>>>>>>> df667c6420ac43bb29a0509079a32e515511e7dd
     public static void main(String[] args) {
      AccessModifierPracSet.cylinder myCylinder = new AccessModifierPracSet().new cylinder();
      myCylinder.setHeight(12);
      System.out.println(myCylinder.getHeight());
      myCylinder.setRadius(5);
      System.out.println(myCylinder.getRadius());
+<<<<<<< HEAD
      myCylinder.setLength(5);
      System.out.println(myCylinder.getLength());
 
      System.out.println(myCylinder.Volumeofcylinder());
      System.out.println(myCylinder.surfaceArea());
+=======
+
+>>>>>>> df667c6420ac43bb29a0509079a32e515511e7dd
     }
 
 }

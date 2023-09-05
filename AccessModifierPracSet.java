@@ -34,7 +34,6 @@ public class AccessModifierPracSet {
         return height;
     }
 
-<<<<<<< HEAD
 
     public double Volumeofcylinder(){
     return 3.142*radius*radius*height;
@@ -44,26 +43,52 @@ public class AccessModifierPracSet {
     }
 }
 
+class Rectangle{
 
-
-=======
+    private int length;
+    public int getLength() {
+        return length;
     }
->>>>>>> df667c6420ac43bb29a0509079a32e515511e7dd
+    public void setLength(int length) {
+        this.length = length;
+    }
+    private int breadth;
+
+    public int getBreadth() {
+        return breadth;
+    }
+    public void setBreadth(int breadth) {
+        this.breadth = breadth;
+    }
+    public Rectangle(){
+        this.length = 4;
+        this.length = 5;
+    }
+    public Rectangle(int length, int breadth){
+        this.length = length;
+        this.breadth = breadth;
+    }
+    
+}
+
+
+
     public static void main(String[] args) {
+//Problem 1
      AccessModifierPracSet.cylinder myCylinder = new AccessModifierPracSet().new cylinder();
      myCylinder.setHeight(12);
      System.out.println(myCylinder.getHeight());
      myCylinder.setRadius(5);
      System.out.println(myCylinder.getRadius());
-<<<<<<< HEAD
      myCylinder.setLength(5);
      System.out.println(myCylinder.getLength());
-
+//Problem 2
      System.out.println(myCylinder.Volumeofcylinder());
      System.out.println(myCylinder.surfaceArea());
-=======
-
->>>>>>> df667c6420ac43bb29a0509079a32e515511e7dd
+//Problem 3
+System.out.println(Area of a Rectangle);
+    
     }
 
 }
+

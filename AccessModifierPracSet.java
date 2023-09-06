@@ -86,7 +86,9 @@ class Rectangle{
      System.out.println(myCylinder.Volumeofcylinder());
      System.out.println(myCylinder.surfaceArea());
 //Problem 3
-System.out.println(Area of a Rectangle);
+Rectangle r = new AccessModifierPracSet().new Rectangle();
+System.out.println(r.getLength());
+System.out.println(r.getBreadth());
     
     }
 

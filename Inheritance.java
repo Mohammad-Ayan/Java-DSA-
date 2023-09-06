@@ -39,5 +39,4 @@ public class Inheritance {
         System.out.println(d.get());
        
        }
-
 }

@@ -38,5 +38,5 @@ public class Inheritance {
         d.setX(4);
         System.out.println(d.get());
        
-       }
+       }  
 }

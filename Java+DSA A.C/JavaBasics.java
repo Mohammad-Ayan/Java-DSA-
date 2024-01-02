@@ -33,6 +33,64 @@ public class JavaBasics {
     // int a = 10 ;
     // a += 10;
     // System.out.println(a);
-    
-  }
-}
+
+    /*
+     * int Age = 24;
+     * 
+     * if (Age <= 18) {
+     * System.out.println("not elligible for vote");
+     * }
+     * if (Age >= 18 && Age <= 60) {
+     * System.out.println("Voter is young");
+     * } else {
+     * System.out.println("elligible for vote");
+     * }f
+     */
+
+    /*
+     * int A = 3;
+     * int B = 5;
+     * if (A >= B) {
+     * System.out.println("A is largest number");
+     * } else {
+     * System.out.println("B is largest number");
+     * }
+     */
+
+    /*
+     * int number = sc.nextInt();
+     * if (number%2 == 0) {
+     * System.out.println("The number is even");
+     * } else {
+     * System.out.println("Number is odd");
+     * }
+     */
+
+    /*
+     * int Age = sc.nextInt();
+     * if (Age == 18) {
+     * System.out.println("Elligible for Vote from this year");
+     * } else if (Age <= 18) {
+     * System.out.println("You are not Elligible to Vote");
+     * }
+     * else {
+     * System.out.println("You are now ellible to Vote");
+     * }
+     */
+
+     int Income = sc.nextInt();
+     int Tax;
+
+     if (Income <= 500000){
+     Tax = 0;
+     }
+       else if (Income >= 500000 && Income <= 1000000){
+     Tax = (int) (Income * 0.2); 
+       }
+      else{
+      Tax = (int)( Income * 0.3);
+      }
+       System.out.println("The Tax is: "+ Tax );
+     }
+    }
+  

@@ -78,19 +78,105 @@ public class JavaBasics {
      * }
      */
 
-     int Income = sc.nextInt();
-     int Tax;
+    /*
+     * int Income = sc.nextInt();
+     * int Tax;
+     * 
+     * if (Income <= 500000){
+     * Tax = 0;
+     * }
+     * else if (Income >= 500000 && Income <= 1000000){
+     * Tax = (int) (Income * 0.2);
+     * }
+     * else{
+     * Tax = (int)( Income * 0.3);
+     * }
+     * System.out.println("The Tax is: "+ Tax );
+     * }
+     */
+    /*
+     * int A = 1;
+     * int B = 3;
+     * int C = 2;
+     * if (A>=B && A>=C) {
+     * System.out.println("A is largest");
+     * } else if (B>=C){
+     * System.out.println("B is largest");
+     * }
+     * else
+     * {System.out.println("C is largest");}
+     * 
+     */
 
-     if (Income <= 500000){
-     Tax = 0;
-     }
-       else if (Income >= 500000 && Income <= 1000000){
-     Tax = (int) (Income * 0.2); 
-       }
-      else{
-      Tax = (int)( Income * 0.3);
-      }
-       System.out.println("The Tax is: "+ Tax );
-     }
+    // TERNARY OPERATOR
+    /*
+     * int num1 = 2, num2 = 4;
+     * boolean larger = (num1 > num2) ? true : false;
+     * {
+     * System.out.println(larger);
+     * }
+     * 
+     * 
+     * int number = 11;
+     * String type = ((number % 2) == 0) ? "even" : "odd";
+     * {
+     * System.out.println(type);
+     * }
+     * 
+     * 
+     * int pass = 10;
+     * String Result = (pass >= 33)? "pass" : "fail";{
+     * System.out.println(Result);
+     * }
+     * 
+     * 
+     * int number = 2;
+     * switch (number) {
+     * case 1:
+     * System.out.println("Samosa");
+     * break;
+     * case 2:
+     * System.out.println("Momos");
+     * break;
+     * case 3:
+     * System.out.println("Kebab");
+     * }
+     */
+    /* 
+{
+      System.out.println("Enter a: ");
     }
-  
+    int a = sc.nextInt();
+    {
+      System.out.println("Enter b: ");
+    }
+    int b = sc.nextInt();
+    {
+      System.out.println("Enter operator: ");
+    }
+    char operator = sc.next().charAt(0);
+
+    switch (operator) {
+      case '+': 
+        System.out.println(a + b);
+        break;
+      case '-': 
+        System.out.println(a - b);
+        break;
+      case '*':
+        System.out.println(a * b);
+        break;
+      case '/':
+        System.out.println(a / b);
+        break;
+      default:
+        System.out.println("Will be added soon");
+        break;
+    }*/
+
+    //LOOPs
+    
+  }
+}
+
+// S24216G6N1011231200026

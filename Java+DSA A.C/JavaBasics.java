@@ -142,40 +142,169 @@ public class JavaBasics {
      * System.out.println("Kebab");
      * }
      */
-    /* 
-{
-      System.out.println("Enter a: ");
-    }
-    int a = sc.nextInt();
-    {
-      System.out.println("Enter b: ");
-    }
-    int b = sc.nextInt();
-    {
-      System.out.println("Enter operator: ");
-    }
-    char operator = sc.next().charAt(0);
+    /*
+     * {
+     * System.out.println("Enter a: ");
+     * }
+     * int a = sc.nextInt();
+     * {
+     * System.out.println("Enter b: ");
+     * }
+     * int b = sc.nextInt();
+     * {
+     * System.out.println("Enter operator: ");
+     * }
+     * char operator = sc.next().charAt(0);
+     * 
+     * switch (operator) {
+     * case '+':
+     * System.out.println(a + b);
+     * break;
+     * case '-':
+     * System.out.println(a - b);
+     * break;
+     * case '*':
+     * System.out.println(a * b);
+     * break;
+     * case '/':
+     * System.out.println(a / b);
+     * break;
+     * default:
+     * System.out.println("Will be added soon");
+     * break;
+     * }
+     */
+    // --------------------------------------04-01-24-----------------------------------------------
+    // LOOPs
+    /*
+     * int counter = 1;
+     * while (counter <= 7)
+     * {
+     * System.out.print(counter+" ");
+     * counter++;
+     * }
+     * 
+     * int n = 1;
+     * int counter = sc.nextInt();
+     * while (n<=counter)
+     * 
+     * {
+     * System.out.println(counter+ " ");
+     * counter++;
+     * }
+     * }
+     * 
+     * for(int i=1; i<=7; i++)
+     * {
+     * System.out.println("yoo");
+     * }
+     * 
+     * for (int i = 1; i<=4; i++){
+     * System.out.println("*****");
+     * }
+     * 
+     * 
+     * int n = sc.nextInt();
+     * int sum = 0;
+     * int i = 1;
+     * while (i <= n) {
+     * sum += i;
+     * i++;
+     * }
+     * System.out.println("Sum of n natural no is: " + sum);
+     * }
+     * 
+     * int counter = 1;
+     * do{
+     * System.out.println("Hey people");
+     * counter++;
+     * }
+     * while(counter<=5);
+     * 
+     * // reverse of 250902
+     * int n = 250902;
+     * 
+     * while (n > 0) {
+     * int lastdigit = n % 10;
+     * System.out.print(lastdigit);
+     * n = n / 10;
+     * }
+     * //disp all no except miultiple of 10
+     * 
+     * do {
+     * System.out.print("Enter number: ");
+     * int n= sc.nextInt();
+     * 
+     * if (n%10==0) {
+     * continue;
+     * }
+     * 
+     * System.out.println("number is: " +n);
+     * 
+     * } while(true);
+     * 
+     * 
+     * do {
+     * System.out.println("Enter the number: ");
+     * int n = sc.nextInt();
+     * if (n % 10 == 0) {
+     * break;
+     * }
+     * System.out.println("Number is: " + n);
+     * 
+     * } while (true);
+     *
+             // nested loops( Pattern )
+ //Q1 
+     * int n = 4;
+     * int m = 5;
+     * for(int i=1;i<=n;i++){
+     * 
+     * for(int j=1;j<=m;j++){
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     * }
+ //Q2
+     * int n = 4;
+     * int m = 5;
+     * for (int i = 1; i <= n; i++) {
+     * 
+     * for (int j = 1; j <= m; j++) {
+     * 
+     * if (i == 1 || j == 1 || i == n || j == m) {
+     * System.out.print("*");
+     * } else {
+     * System.out.print(" ");
+     * }
+     * 
+     * }
+     * System.out.println();
+     * }
+//Q3
+     * int n = 4;
+     * for(int i = 1; i <= n; i++){
+     * for(int j = 1; j <=i; j++){
+     * 
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     
+// Q4
+    int n = 4;
+    //outer loop
+    for (int i = n; i >= 1; i--) {
+      // innner loop
+      for (int j = 1; j <= i; j++) {
 
-    switch (operator) {
-      case '+': 
-        System.out.println(a + b);
-        break;
-      case '-': 
-        System.out.println(a - b);
-        break;
-      case '*':
-        System.out.println(a * b);
-        break;
-      case '/':
-        System.out.println(a / b);
-        break;
-      default:
-        System.out.println("Will be added soon");
-        break;
+        System.out.print("*");
+      }
+      System.out.println();
     }*/
 
-    //LOOPs
-    
+  // Q5
   }
 }
 

@@ -254,8 +254,8 @@ public class JavaBasics {
      * 
      * } while (true);
      *
-             // nested loops( Pattern )
- //Q1 
+     * // nested loops( Pattern )
+     * //Q1
      * int n = 4;
      * int m = 5;
      * for(int i=1;i<=n;i++){
@@ -266,7 +266,7 @@ public class JavaBasics {
      * System.out.println();
      * }
      * }
- //Q2
+     * //Q2
      * int n = 4;
      * int m = 5;
      * for (int i = 1; i <= n; i++) {
@@ -282,7 +282,7 @@ public class JavaBasics {
      * }
      * System.out.println();
      * }
-//Q3
+     * //Q3
      * int n = 4;
      * for(int i = 1; i <= n; i++){
      * for(int j = 1; j <=i; j++){
@@ -291,20 +291,194 @@ public class JavaBasics {
      * }
      * System.out.println();
      * }
+     * 
+     * // Q4
+     * int n = 4;
+     * //outer loop
+     * for (int i = n; i >= 1; i--) {
+     * // innner loop
+     * for (int j = 1; j <= i; j++) {
+     * 
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     * 
+     * //
+     * -------------------------------------------05-01-24--------------------------
+     * -------------------------
+     * 
+     * // Q5
+     * int n = 4;
+     * // OUTER LOOP
+     * for (int i = 1; i <= n; i++) {
+     * // INNER LOOP FOR SPACE
+     * for (int j = 1; j <= n - i; j++) {
+     * System.out.print(" ");
+     * }
+     * // INNER LOOP FOR STAR
+     * for (int j = 1; j <= i; j++) {
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     * 
+     * // Q6 (HALF PYRAMID WITH NOs)
+     * int n = 5;
+     * for(int i=1; i<=n; i++){
+     * for(int j=1; j<=i; j++){
+     * System.out.print(j+" ");
+     * }
+     * System.out.println(" ");
+     * }
+     * 
+     * // Q7 (HALF INVERTED PYRAMID WITH NOs)
+     * int n= 5;
+     * for (int i=1; i<=n; i++){
+     * for (int j=1; j<=n-i+1; j++) {
+     * System.out.print(j +" ");
+     * }
+     * System.out.println(" ");
+     * }
+     * 
+     * 
+     * // Q8 (FLOYD'S TRIANGLE)
+     * int n = 5;
+     * int number = 1;
+     * for(int i=1;i<=n;i++){
+     * for(int j=1;j<=i;j++){
+     * System.out.print(number);
+     * number++;
+     * }
+     * System.out.println(" ");
+     * }
+     * 
+     * // Q9 TRIANGLE WITH 01
+     * int n = 5;
+     * for(int i = 1; i<= n; i++){
+     * for (int j= 1; j<=i; j++){
+     * 
+     * int sum=i+j;
+     * if(sum%2 ==0)
+     * {
+     * System.out.print("1");
+     * }
+     * else{
+     * System.out.print("0");
+     * }
+     * }
+     * System.out.println();
+     * }
+     * 
+     * 
+     * // Q10 BUTTERFLY
+     * /* int n = 5;
+     * //upper half
+     * for (int i = 1; i <= n; i++) {
+     * for (int j = 1; j <= i; j++) {
+     * System.out.print("*");
+     * }
+     * // spaces
+     * int spaces = 2 * (n - i);
+     * for (int j = 1; j <= spaces; j++) {
+     * System.out.print(" ");
+     * }
+     * // 2 part
+     * for(int j =1;j<=i;j++){
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     * 
+     * //lower half
+     * for (int i = n; i >= 1; i--) {
+     * for (int j = 1; j <= i; j++) {
+     * System.out.print("*");
+     * }
+     * // spaces
+     * int spaces = 2 * (n - i);
+     * for (int j = 1; j <= spaces; j++) {
+     * System.out.print(" ");
+     * }
+     * // 2 part
+     * for(int j =1;j<=i;j++){
+     * System.out.print("*");
+     * }
+     * System.out.println();
+     * }
+     * 
+     * 
+     * // Q11 Rhombus
+     * 
+     * int n = 5;
+     * for(int i=1; i<=n; i++){
+     * //spaces
+     * for (int j=1; j<=n-i; j++){
+     * System.out.print(" ");
+     * }
+     * //stars
+     * for(int j= 1; j<=5; j++){
+     * System.out.print("*");
+     * }
+     * 
+     * System.out.println();
+     * }
+     * 
+     * // Q12 Number Pyramid
+     * int n = 5;
+     * for(int i=1; i<=n;i++){
+     * //for spaces
+     * for (int j=1; j<=n-i; j++){
+     * System.out.print(" ");
+     * }
+     * // for numbers
+     * for(int j=1; j<=i; j++){
+     * System.out.print(i + " ");
+     * }
+     * System.out.println();
+     * }
+     * 
+     * 
+     * // Q13 palandromic pattern
+     * 
+     * int n = 5;
+     * for (int i = 1; i <= n; i++) {
+     * 
+     * for (int j = 1; j <= n - i; j++) {
+     * System.out.print(" ");
+     * }
+     * // 1st half
+     * for (int j = i; j >= 1; j--) {
+     * System.out.print(j);
+     * }
+     * // 2nd half
+     * for (int j = 2; j <= i; j++) {
+     * System.out.print(j);
+     * }
+     * System.out.println();
+     * }
      
-// Q4
-    int n = 4;
-    //outer loop
-    for (int i = n; i >= 1; i--) {
-      // innner loop
-      for (int j = 1; j <= i; j++) {
 
+    // Q14 Daimond
+    int n = 4;
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= 2 * i-1; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    for (int i = n; i >= 1; i--) {
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= 2 * i-1; j++) {
         System.out.print("*");
       }
       System.out.println();
     }*/
-
-  // Q5
   }
 }
 

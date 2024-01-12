@@ -174,4 +174,15 @@ public class Function {
      * public static void main(String[] args) {
      * primeInRange(50);
      */
-}
+
+//------------------------------------------ 11-01-24 ------------------------------------------------------
+     
+// public static void binToDeci(int binNum){
+//     int pow = n
+// }
+    
+// }
+// public static void main(String[] args) {
+    
+// }
+ }

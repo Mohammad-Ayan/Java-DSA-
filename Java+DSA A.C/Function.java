@@ -24,7 +24,7 @@ public class Function {
      * }
      * 
      * public static void swap(int a, int b) {
-     * // swap
+     * ----------- * // swap
      * int temp = a;
      * a = b;
      * b = temp;
@@ -83,7 +83,7 @@ public class Function {
      * return f; // factorial of f
      * }
      * 
-     * // Binomial Coefficient
+     * ------- * // Binomial Coefficient
      * 
      * public static int binCoeff(int n, int r) {
      * int fact_n = factorial(n);
@@ -97,13 +97,13 @@ public class Function {
      * public static void main(String[] args) {
      * System.out.println(binCoeff(5, 2));
      * 
-     * // Function overloading
-     * // function to add 3 no's
+     * ----- * // Function overloading
+     * -- * // function to add 3 no's
      * public static int sum(int a, int b) {
      * return a + b;
      * }
      * 
-     * // function to add 3 no's
+     * ---- * // function to add 3 no's
      * public static int sum(int a, int b, int c) {
      * return a + b + c;
      * }
@@ -137,7 +137,7 @@ public class Function {
      * public static void main(String[] args) {
      * System.out.println(isPrime(8));
      * 
-     * // Find Prime with Optized sol
+     * --- * // Find Prime with Optized sol
      * public static boolean isPrime(int n){
      * boolean isPrime = true;
      * for(int i=2; i<=Math.sqrt(n); i++){
@@ -160,7 +160,7 @@ public class Function {
      * return isPrime;
      * }
      * 
-     * // Print prime no in Range
+     * ---- * // Print prime no in Range
      * public static void primeInRange(int n) {
      * 
      * for (int i = 2; i <= n; i++) {
@@ -173,16 +173,39 @@ public class Function {
      * 
      * public static void main(String[] args) {
      * primeInRange(50);
-     */
-
-//------------------------------------------ 11-01-24 ------------------------------------------------------
      
-// public static void binToDeci(int binNum){
-//     int pow = n
-// }
-    
-// }
-// public static void main(String[] args) {
-    
-// }
- }
+
+    // ------------------------------------------ 11-01-24
+    // ------------------------------------------------------
+
+    public static void binToDeci(int binNum) {
+        int myNum = binNum;
+        int pow = 0;
+        int deciNum = 0;
+
+        while (binNum > 0) {
+            int lastDigit = binNum % 10;
+            deciNum = deciNum + (lastDigit * (int) Math.pow(2, pow));
+
+            pow++;
+            binNum = binNum / 10;
+        }
+        System.out.println("decimal of " + myNum +" = " + deciNum);
+    }
+
+    public static void main(String[] args) {
+        binToDeci(101 );
+
+        */
+        public static int Avg(int avg1, avg2, avg3){
+        int avg1= a;
+        int avg2= b;
+        int avg3= c;
+        int Avg = avg1 +avg2+avg3/3;
+        }
+        return Avg;
+    }
+public static void main(String[] args) {
+    Avg(0)
+}
+}

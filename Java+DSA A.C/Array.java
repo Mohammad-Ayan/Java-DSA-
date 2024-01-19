@@ -56,19 +56,44 @@ public class Array {
     // }
 
     // Larest No in Array
-    public static int getLargest(int numbers[]) {
-        int largest = Integer.MIN_VALUE;
-        for (int i = 0; i < numbers.length; i++) {
+    // public static int getLargest(int numbers[]) {
+    //     int largest = Integer.MIN_VALUE;
+    //     for (int i = 0; i < numbers.length; i++) {
 
-            if (largest < numbers[i]) {
-                largest = numbers[i];
+    //         if (largest < numbers[i]) {
+    //             largest = numbers[i];
+    //         }
+    //     }
+    //     return largest;
+    // }
+
+    // public static void main(String[] args) {
+    //     int numbers[] = { 3, 5, 7, 10, 32, 15 };
+    //     System.out.println("The larest No: " + getLargest(numbers));
+
+
+    public static int binarySearch(int numbers[], int key) {
+        int start = 0, end = numbers.length-1; 
+
+        while(start <= end){
+            int mid = (start+end)/2;  
+
+            if (numbers[mid] == key){       //found
+                return mid;
+            }
+            
+            if (numbers[mid] < key){       //right
+                start = mid + 1;
+            }else{                        //left
+                end = mid - 1;            
             }
         }
-        return largest;
+        return -1;
     }
-
     public static void main(String[] args) {
-        int numbers[] = { 3, 5, 7, 10, 32, 15 };
-        System.out.println("The larest No: " + getLargest(numbers));
+        int numbers[]= {2, 4, 6, 8, 10, 12, 14, 16};
+        int key = 10;
+
+        System.out.println( "The index is: " + binarySearch(numbers, key));
     }
-}
+    }

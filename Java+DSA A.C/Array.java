@@ -32,7 +32,7 @@ public class Array {
     // // for (int i = 0; i < marks.length; i++) {
     // // System.out.println(marks[i] + " ");
 
-    // Linear Search
+    // -------------------------------Linear Search-------------------------------------------
 
     // public static int linearSearch(int number[], int key) {
     // for (int i = 0; i < number.length; i++) {
@@ -55,7 +55,7 @@ public class Array {
     // }
     // }
 
-    // Larest No in Array
+    // -------Larest No in Array
     // public static int getLargest(int numbers[]) {
     //     int largest = Integer.MIN_VALUE;
     //     for (int i = 0; i < numbers.length; i++) {
@@ -71,7 +71,7 @@ public class Array {
     //     int numbers[] = { 3, 5, 7, 10, 32, 15 };
     //     System.out.println("The larest No: " + getLargest(numbers));
 
-
+//----------------------binarySearch------------------
     // public static int binarySearch(int numbers[], int key) {
     //     int start = 0, end = numbers.length-1; 
 
@@ -98,33 +98,7 @@ public class Array {
     
     // }
 
-    import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-
-        long maxGCD = 0;
-        long maxLCM = (long) N * (N - 1) / 2; // Maximum LCM for consecutive numbers
-
-        for (int i = 2; i <= N; i++) {
-            maxGCD = calculateGCD(maxGCD, i);
-        }
-
-        long difference = maxLCM - maxGCD;
-        System.out.println(difference);
-    }
-
-    // Function to calculate GCD (Euclidean Algorithm)
-    private static long calculateGCD(long a, long b) {
-        while (b != 0) {
-            long temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    }
+    
 }
 }
 

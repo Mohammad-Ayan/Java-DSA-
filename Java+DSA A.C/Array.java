@@ -32,7 +32,7 @@ public class Array {
     // // for (int i = 0; i < marks.length; i++) {
     // // System.out.println(marks[i] + " ");
 
-    // -------------------------------Linear Search-------------------------------------------
+    // ------------------------------LinearSearch-------------------------------------------
 
     // public static int linearSearch(int number[], int key) {
     // for (int i = 0; i < number.length; i++) {
@@ -57,49 +57,159 @@ public class Array {
 
     // -------Larest No in Array
     // public static int getLargest(int numbers[]) {
-    //     int largest = Integer.MIN_VALUE;
-    //     for (int i = 0; i < numbers.length; i++) {
+    // int largest = Integer.MIN_VALUE;
+    // for (int i = 0; i < numbers.length; i++) {
 
-    //         if (largest < numbers[i]) {
-    //             largest = numbers[i];
-    //         }
-    //     }
-    //     return largest;
+    // if (largest < numbers[i]) {
+    // largest = numbers[i];
+    // }
+    // }
+    // return largest;
     // }
 
     // public static void main(String[] args) {
-    //     int numbers[] = { 3, 5, 7, 10, 32, 15 };
-    //     System.out.println("The larest No: " + getLargest(numbers));
+    // int numbers[] = { 3, 5, 7, 10, 32, 15 };
+    // System.out.println("The larest No: " + getLargest(numbers));
 
-//----------------------binarySearch------------------
+    // --------------------------------binarySearch------------------------------------------
     // public static int binarySearch(int numbers[], int key) {
-    //     int start = 0, end = numbers.length-1; 
+    // int start = 0, end = numbers.length-1;
 
-    //     while(start <= end){
-    //         int mid = (start+end)/2;  
+    // while(start <= end){
+    // int mid = (start+end)/2;
 
-    //         if (numbers[mid] == key){       //found
-    //             return mid;
-    //         }
-            
-    //         if (numbers[mid] < key){       //right
-    //             start = mid + 1;
-    //         }else{                        //left
-    //             end = mid - 1;            
-    //         }
-    //     }
-    //     return -1;
+    // if (numbers[mid] == key){ //found
+    // return mid;
+    // }
+
+    // if (numbers[mid] < key){ //right
+    // start = mid + 1;
+    // }else{ //left
+    // end = mid - 1;
+    // }
+    // }
+    // return -1;
     // }
     // public static void main(String[] args) {
-    //     int numbers[]= {2, 4, 6, 8, 10, 12, 14, 16};
-    //     int key = 10;
+    // int numbers[]= {2, 4, 6, 8, 10, 12, 14, 16};
+    // int key = 10;
 
-    //     System.out.println( "The index is: " + binarySearch(numbers, key));
-    
+    // System.out.println( "The index is: " + binarySearch(numbers, key));
+
+    // }
+    // ----------------------------------------Reverse_Array-------------------------------------------
+
+    // public static void reverse(int numbers[]) {
+    // int first = 0, last = numbers.length - 1;
+
+    // while (first < last) {
+    // // swap
+    // int temp = numbers[last];
+    // numbers[last] = numbers[first];
+    // numbers[first] = temp;
+
+    // first++;
+    // last--;
+    // }
     // }
 
-    
-}
-}
+    // public static void main(String[] args) {
+    // int numbers[] = { 12, 14, 16, 18, 20 };
+    // reverse(numbers);
+    // // print
+    // {
+    // System.out.print(numbers[i] + " ");
+    // }
+    // System.out.println();
+    // }
 
+    // -----------------------------------------Pairs_in_Array-----------------------------------------
+    // public static void printPairs(int numbers[]){
+    // int tp = 0;
+    // for (int i = 0; i<numbers.length; i++){
+    // int curr = numbers[i]; // 2,4,6,8,10
+    // for (int j = i+1; j<numbers.length; j++){
+    // System.out.print("(" + curr +"," + numbers[j]+ ")" );
+    // tp++;
+    // }
+    // System.out.println();
+    // }
+    // System.out.println("Total pairs:" + tp);
+    // }
 
+    // public static void main(String[] args) {
+    // int numbers[]= {2, 4, 6, 8, 10};
+    // printPairs(numbers);
+
+    // ------------------------------------Sub-Array----------------------------------------------------
+
+    // public static void printSubArrays(int numbers[]) {
+    // int tp = 0;
+    // for (int i = 0; i < numbers.length; i++) {
+    // int start = i;
+    // for (int j = i; j < numbers.length; j++) {
+    // int end = j;
+    // for (int k = start; k <= end; k++) {
+    // System.out.print(numbers[k] + " ");
+    // }
+    // tp++;
+    // System.out.println();
+    // }
+    // System.out.println();
+    // }
+    // System.out.println("Total Pairs: "+tp);
+    // }
+
+    // public static void main(String[] args) {
+    // int numbers[] = { 2, 4, 6, 8, 10 };
+    // printSubArrays(numbers);
+
+    // }
+    // }
+    // -----------------------------------------Max_subArray_Sum------------------------------------------------
+    // public static void MaxSubArraysSum(int numbers[]) {
+    // int currSum = 0;
+    // int maxSum = Integer.MIN_VALUE;
+    // for (int i = 0; i < numbers.length; i++) {
+    // int start = i;
+    // for (int j = i; j < numbers.length; j++) {
+    // int end = j;
+    // currSum = 0;
+    // for (int k = start; k <= end; k++) {
+    // currSum += numbers[k];
+    // }
+    // System.out.println(currSum);
+    // if (maxSum < currSum){
+    // maxSum = currSum;
+    // }
+    // }
+    // }
+    // System.out.println("maxSum = "+maxSum);
+    // }
+
+    // public static void main(String[] args) {
+    // int numbers[] = { 2, 4, 6, 8, 10 };
+    // MaxSubArraysSum(numbers);
+
+    // }
+    // }
+    // ---------------------------------------Khadanes_Algo------------------------------------------------
+//     public static void Khadanes(int numbers[]) {
+//         int currS = 0;
+//         int maxS = Integer.MIN_VALUE;
+
+//         for (int i = 0; i < numbers.length; i++) {
+//             currS = currS + numbers[i];
+//             if (currS < 0) {
+//                 currS = 0;
+//             }
+//             maxS = Math.max(currS, maxS);
+//         }
+//         System.out.println("Max Sum of Array is: " + maxS);
+//     }
+
+//     public static void main(String[] args) {
+//         int numbers[] = { -2, -3, 4, -1, -1, 1, 5, -3 };
+//         Khadanes(numbers);
+//     }
+// }

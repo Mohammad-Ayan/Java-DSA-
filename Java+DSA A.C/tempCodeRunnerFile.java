@@ -1,1 +1,1 @@
-printArr(arr);
+matrix

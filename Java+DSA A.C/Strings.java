@@ -15,7 +15,7 @@ public class Strings {
     // }
     // }
 
-    // -----------------------Palindrome----------------------------
+    // ----------------------------------Palindrome--------------------------------
 
     // public static boolean isPalindrome(String str) {
     // for(int i = 0; i<str.length()/2;i++){
@@ -33,7 +33,8 @@ public class Strings {
     // System.out.println(isPalindrome(str));
     // }
 
-    // -------------------------Shortest_Path-----------------------------
+    // -----------------------------------Shortest_Path----------------------------------
+
     // public static float getShortestPath(String path) {
     // int x = 0, y = 0;
 
@@ -67,46 +68,83 @@ public class Strings {
     // System.out.println(getShortestPath(path));
     // }
 
-    // ----------------------------Comparing_Strings------------------------------
+    // -----------------------------------Comparing_Strings------------------------------------
 
     // public static void main(String[] args) {
-    //     String s1 = "Ayan";
-    //     String s2 = "Ayan";
-    //     String s3 = new String("Ayan");
+    // String s1 = "Ayan";
+    // String s2 = "Ayan";
+    // String s3 = new String("Ayan");
 
-    //     // if(s1 == s2){
-    //     // System.out.println("Strings are equal");
-    //     // }
-    //     // else{
-    //     // System.out.println("Strings are not equal");
-    //     // }
-    //     // if( s1 == s3){
-    //     // System.out.println("Strings are equal");
-    //     // } 
-    //     // else{
-    //     // System.out.println("Strings are not equal");
-    //     // }
+    // // if(s1 == s2){
+    // // System.out.println("Strings are equal");
+    // // }
+    // // else{
+    // // System.out.println("Strings are not equal");
+    // // }
+    // // if( s1 == s3){
+    // // System.out.println("Strings are equal");
+    // // }
+    // // else{
+    // // System.out.println("Strings are not equal");
+    // // }
 
-    //     if (s1.equals(s3)) {
-    //         System.out.println("Strings are equal");
-    //     } else {
-    //         System.out.println("Strings are not equal");
-    //     }
+    // if (s1.equals(s3)) {
+    // System.out.println("Strings are equal");
+    // } else {
+    // System.out.println("Strings are not equal");
     // }
-    //-------------------------Substring------------------------------
+    // }
+    // ----------------------------------Substring-----------------------------------
 
     // public static String substring(String str, int si, int ei) {
-    //     String substr = "";
-    //         for(int i = si; i<ei; i++){
-    //             substr += str.charAt(i);
-    //         }
-    //         return substr;
+    // String substr = "";
+    // for(int i = si; i<ei; i++){
+    // substr += str.charAt(i);
+    // }
+    // return substr;
     // }
     // public static void main(String[] args) {
-        
-    //     //Substring
-    //     String str= "MohdAyan";
-    //     // System.out.println(substring(str, 1, 5));
-    //     System.out.println(str.substring(2,5));   //java
+
+    // //Substring
+    // String str= "MohdAyan";
+    // // System.out.println(substring(str, 1, 5));
+    // System.out.println(str.substring(2,5)); //java
     // }
+
+    //--------------------------------------String_Builder-----------------------------------------
+//     public static void main(String[] args) {
+//         StringBuilder sb = new StringBuilder(" ");
+//         for(char ch='a'; ch<='z';ch++){
+//             sb.append(ch);
+//         }
+//         System.out.println(sb);
+//     }
+// //---------------------------------------LowerCase_to_UpperCase------------------------------------
+
+// public static String toUpperCase(String str) {
+//     StringBuilder sb =  new StringBuilder("");
+
+//     char ch = Character.toUpperCase(str.charAt(0));
+//     sb.append(str.charAt(i))
+// }
+// }
+// }
+// public static void main(String[] args) {
+//     String str = "hi i am ayan";
+
+// }
+//-------------------------------------------Questions---------------------------------------
+
+    // public static void main(String args[]) {
+    // String str = "ShradhaDidi";
+    // String str1 = "ApnaCollege";
+    // String str2 = "ShradhaDidi";
+    // System.out.println(str.equals(str1) + " " + str.equals(str2));
+    // }
+    // public static void main(String args[]) {
+    // String str = "ApnaCollege".replace("l", "");
+    // System.out.println(str);
+    // }
+    // }
+
 }

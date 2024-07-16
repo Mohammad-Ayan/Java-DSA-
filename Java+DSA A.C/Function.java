@@ -12,7 +12,7 @@ public class Function {
     // printHelloWorld(); //function call
     // }
 
-    // ---------Syntax with Parameters----------
+    // ----------Syntax with Parameters----------
 
     // public static int calculateSum(int num1, int num2) { // parameters
     // int sum = num1 + num2;
@@ -25,12 +25,26 @@ public class Function {
     // System.out.println("Enter no a: ");
     // int b = sc.nextInt();
     // System.out.println("Enter no b: ");
-    // int sum = calculateSum(a + b);  //arguments
+    // int sum = calculateSum(a + b); //arguments
     // System.out.println("sum: " + sum);
     // }
 
+    // -----------------Call by Value----------------
+    // ----- swap----
+    // public static void main(String args[]) {
+    // // swap - values exchange
+    // int a = 5;
+    // int b = 10;
+
+    // // swap
+    // int temp = a;
+    // a = b;
+    // b = temp;
+    // System.out.println("a: " + a);
+    // System.out.println("b: " + b);
+    // }
+    // -------OR-----(SWAP using function parameter)
     // public static void swap(int a, int b) {
-    // //---------------- swap
     // int temp = a;
     // a = b;
     // b = temp;
@@ -38,88 +52,84 @@ public class Function {
     // System.out.println("b: " + b);
     // }
 
+    // public static void main(String[] args) {
+    // int a = 5;
+    // int b = 10;
+    // swap(a, b);
+    // }
+
+    // --------Product of a & b----------
+
     // public static int multiply(int a, int b) {
     // int product = a * b;
-
     // return product;
     // }
 
     // public static void main(String[] args) {
-    // printHelloWorld(); // function calling
-    // printSum();
-    // Scanner sc = new Scanner(System.in);
-    // int a = sc.nextInt();
-    // int b = sc.nextInt();
-    // int sum = calculateSum(a, b); //arguments
-    // System.out.println("sum:"+ sum);
-
-    // //-SWAP
-    // int a = 5;
-    // int b = 4;
-    // swap(a, b);
-    // int a = 5;
+    // int a = 3;
     // int b = 4;
     // int prod = multiply(a, b);
-
-    // System.out.println("a*b = " + prod);
-    // multiply(10, 20);
-    // System.out.println("a*b: " + prod);
-
-    // public static int calculateProduct(int a, int b) {
-    // int product = a * b;
-    // return product;
+    // System.out.println("a * b:" + prod);
+    // prod = multiply(10, 5);
+    // System.out.println("a * b:" + prod);
     // }
 
-    // public static void main(String[]args){
+    // -----------------------------------------09-01-24 /
+    // 16-07-24------------------------------------------------------------------
 
-    // int product = calculateProduct(3, 4);System.out.println(product);
-    // }}
+    // ------- factorial of 2 no's---------
 
-    // -----------------------------------------09-01-24------------------------------------------------------------------
+    public static int factorial(int n) {
+        int f = 1;
+        for (int i = 1; i <= n; i++) {
+            f = f * i;
 
-    // factorial of 2 no's
+        }
+        return f; // factorial of n
+    }
 
-    // public static int factorial(int n) {
-    // int f = 1;
-    // for (int i = 1; i <= n; i++) {
-    // f = f * i;
-
+    // public static void main(String[] args) {
+    // System.out.println(factorial(4));
     // }
-    // return f; // factorial of f
-    // }
 
-    // //----Binomial Coefficient
+    // //--------Binomial Coefficient--------
 
     // public static int binCoeff(int n, int r) {
-    // int fact_n = factorial(n);
-    // int fact_r = factorial(r);
-    // int fact_nmr = factorial(n - r);
+    //     int fact_n = factorial(n);
+    //     int fact_r = factorial(r);
+    //     int fact_nmr = factorial(n - r);
 
-    // int binCoeff = fact_n / (fact_r * fact_nmr);
-    // return binCoeff;
+    //     int binCoeff = fact_n / (fact_r * fact_nmr);
+    //     return binCoeff;
     // }
 
     // public static void main(String[] args) {
-    // System.out.println(binCoeff(5, 2));
+    //     System.out.println(binCoeff(5, 2));
+    // }
 
-    // ----- * // Function overloading
-    // -- * // function to add 3 no's
+    // //---------- Function overloading-----------
+// using Parameters
+    // -- * // function to add 2 no's
     // public static int sum(int a, int b) {
     // return a + b;
     // }
 
-    // ---- * // function to add 3 no's
+    // -- * // function to add 3 no's
     // public static int sum(int a, int b, int c) {
     // return a + b + c;
-    // }
+    // } 
 
     // public static void main(String[] args) {
-    // System.out.println(sum(2, 3, 5));
-    // System.out.println(sum(4, 50));
+    // System.out.println(sum(2, 3));
+    // System.out.println(sum(4, 5, 8));
 
+// using Data Types
+    //-- * // function to cal int sum
     // public static int sum(int a, int b){
     // return a+b;
     // }
+
+    //-- * // function to cal float sum
     // public static float sum(float a, float b){
     // return a+b;
     // }

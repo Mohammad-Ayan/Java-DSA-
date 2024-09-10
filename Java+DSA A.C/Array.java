@@ -100,67 +100,74 @@ public class Array {
     // -----------------------Reverse_Array------------------------
 
     // public static void reverse(int numbers[]) {
-    //     int first = 0, last = numbers.length - 1;
+    // int first = 0, last = numbers.length - 1;
 
-    //     while (first < last) {
-    //         // swap
-    //         int temp = numbers[last];
-    //         numbers[last] = numbers[first];
-    //         numbers[first] = temp;
+    // while (first < last) {
+    // // swap
+    // int temp = numbers[last];
+    // numbers[last] = numbers[first];
+    // numbers[first] = temp;
 
-    //         first++;
-    //         last--;
-    //     }
+    // first++;
+    // last--;
+    // }
     // }
 
     // public static void main(String[] args) {
-    //     int numbers[] = { 12, 14, 16, 18, 20 };
+    // int numbers[] = { 12, 14, 16, 18, 20 };
 
-    //     reverse(numbers);
+    // reverse(numbers);
 
-    //     // print
-    //     for (int i = 0; i < numbers.length; i++) {
-    //         System.out.print(numbers[i] + " ");
-    //     }
-    //     System.out.println();
+    // // print
+    // for (int i = 0; i < numbers.length; i++) {
+    // System.out.print(numbers[i] + " ");
+    // }
+    // System.out.println();
     // }
 
     // ------------------------Pairs_in_Array------------------------
-    
-    // public static void printPairs(int numbers[]){
-    // int tp = 0;
-    // for (int i = 0; i<numbers.length; i++){
-    // int curr = numbers[i]; // 2,4,6,8,10
-    // for (int j = i+1; j<numbers.length; j++){
-    // System.out.print("(" + curr +"," + numbers[j]+ ")" );
+
+    // public static void printPairs(int numbers[]) {
+    // int tp = 0; // total pairs
+    // for (int i = 0; i < numbers.length; i++) {
+    // int curr = numbers[i]; // 2, 4, 6, 8, 10
+    // for (int j = i + 1; j < numbers.length; j++) { //pairs
+    // System.out.print("(" + curr + "," + numbers[j] + ")"); // (2,4) (2,6) (2,8)
+    // (2,10)
     // tp++;
     // }
     // System.out.println();
     // }
-    // System.out.println("Total pairs:" + tp);
+    // System.out.println("Total pairs:" + tp); // total pairs
     // }
 
     // public static void main(String[] args) {
-    // int numbers[]= {2, 4, 6, 8, 10};
+    // int numbers[] = { 2, 4, 6, 8, 10 };
     // printPairs(numbers);
+    // }
 
-    // ------------------------------------Sub-Array----------------------------------------------------
+    // ---------------------------Sub-Array---------------------------
 
     // public static void printSubArrays(int numbers[]) {
-    // int tp = 0;
-    // for (int i = 0; i < numbers.length; i++) {
+    // int ts = 0;
+    // for (int i = 0; i < numbers.length; i++) { // start
     // int start = i;
-    // for (int j = i; j < numbers.length; j++) {
+    // for (int j = i; j < numbers.length; j++) { // end
     // int end = j;
-    // for (int k = start; k <= end; k++) {
+    // int sum = 0;
+    // for (int k = start; k <= end; k++) { // print b/w start & end
     // System.out.print(numbers[k] + " ");
+
+    // sum += numbers[k]; // accumulate sum
     // }
-    // tp++;
+    // ts++;
+    // System.out.println("-> Sum: " + sum);
+    // }
+
     // System.out.println();
+
     // }
-    // System.out.println();
-    // }
-    // System.out.println("Total Pairs: "+tp);
+    // System.out.println("Total Pairs: "+ts);
     // }
 
     // public static void main(String[] args) {
@@ -168,34 +175,33 @@ public class Array {
     // printSubArrays(numbers);
 
     // }
-    // }
     // -----------------------------------------Max_subArray_Sum------------------------------------------------
-    // public static void MaxSubArraysSum(int numbers[]) {
-    // int currSum = 0;
-    // int maxSum = Integer.MIN_VALUE;
-    // for (int i = 0; i < numbers.length; i++) {
-    // int start = i;
-    // for (int j = i; j < numbers.length; j++) {
-    // int end = j;
-    // currSum = 0;
-    // for (int k = start; k <= end; k++) {
-    // currSum += numbers[k];
-    // }
-    // System.out.println(currSum);
-    // if (maxSum < currSum){
-    // maxSum = currSum;
-    // }
-    // }
-    // }
-    // System.out.println("maxSum = "+maxSum);
-    // }
+    public static void MaxSubArraysSum(int numbers[]) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = 0; i < numbers.length; i++) {
+            int start = i;
+            for (int j = i; j < numbers.length; j++) {
+                int end = j;
+                currSum = 0;
+                for (int k = start; k <= end; k++) {
+                    currSum += numbers[k];
+                }
+                System.out.println(currSum);
+                if (maxSum < currSum) {
+                    maxSum = currSum;
+                }
+            }
+        }
+        System.out.println("maxSum = " + maxSum);
+    }
 
-    // public static void main(String[] args) {
-    // int numbers[] = { 2, 4, 6, 8, 10 };
-    // MaxSubArraysSum(numbers);
+    public static void main(String[] args) {
+        int numbers[] = { 2, 4, 6, 8, 10 };
+        MaxSubArraysSum(numbers);
 
-    // }
-    // }
+    }
+
     // ---------------------------------------Khadanes_Algo------------------------------------------------
     // public static void Khadanes(int numbers[]) {
     // int currS = 0;

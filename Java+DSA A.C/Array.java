@@ -13,7 +13,7 @@ public class Array {
     // System.out.println("Percentage: "+ percentage);
     // System.out.println(marks.length); // To know the lenght of an Array (.length)
 
-    // ------------------------------------Prog-2---------------------------------------
+    // --------------------Prog-2---------------------
     // public static void update(int marks[]) {
 
     // for (int i = 0; i < marks.length; i++) {
@@ -32,7 +32,7 @@ public class Array {
     // for (int i = 0; i < marks.length; i++) {
     // System.out.println(marks[i] + " ");
 
-    // ------------------------------LinearSearch---------------------------------------
+    // ----------------------LinearSearch---------------------
 
     // public static int linearSearch(int number[], int key) {
     // for (int i = 0; i < number.length; i++) {
@@ -55,6 +55,7 @@ public class Array {
     // }
 
     // ----------------Larest No in Array----------------
+
     // public static int getLargest(int numbers[]) {
     // int largest = Integer.MIN_VALUE; // -infinity
     // for (int i = 0; i < numbers.length; i++) {
@@ -70,7 +71,8 @@ public class Array {
     // int numbers[] = { 3, 5, 7, 10, 32, 15 };
     // System.out.println("The larest No: " + getLargest(numbers));
 
-    // --------------------------------binarySearch------------------------------------------
+    // -------------------binarySearch---------------------
+
     // public static int binarySearch(int numbers[], int key) {
     // int start = 0, end = numbers.length - 1;
 
@@ -146,7 +148,7 @@ public class Array {
     // printPairs(numbers);
     // }
 
-    // ---------------------------Sub-Array---------------------------
+    // -----------------------Sub-Array------------------------
 
     // public static void printSubArrays(int numbers[]) {
     // int ts = 0;
@@ -167,7 +169,7 @@ public class Array {
     // System.out.println();
 
     // }
-    // System.out.println("Total Pairs: "+ts);
+    // System.out.println("Total Pairs: " + ts);
     // }
 
     // public static void main(String[] args) {
@@ -175,52 +177,53 @@ public class Array {
     // printSubArrays(numbers);
 
     // }
-    // -----------------------------------------Max_subArray_Sum------------------------------------------------
-    public static void MaxSubArraysSum(int numbers[]) {
-        int currSum = 0;
-        int maxSum = Integer.MIN_VALUE;
-        for (int i = 0; i < numbers.length; i++) {
-            int start = i;
-            for (int j = i; j < numbers.length; j++) {
-                int end = j;
-                currSum = 0;
-                for (int k = start; k <= end; k++) {
-                    currSum += numbers[k];
-                }
-                System.out.println(currSum);
-                if (maxSum < currSum) {
-                    maxSum = currSum;
-                }
-            }
-        }
-        System.out.println("maxSum = " + maxSum);
-    }
+    // ---------------------Max_subArray_Sum-------------------------
 
-    public static void main(String[] args) {
-        int numbers[] = { 2, 4, 6, 8, 10 };
-        MaxSubArraysSum(numbers);
-
-    }
-
-    // ---------------------------------------Khadanes_Algo------------------------------------------------
-    // public static void Khadanes(int numbers[]) {
-    // int currS = 0;
-    // int maxS = Integer.MIN_VALUE;
-
+    // public static void MaxSubArraysSum(int numbers[]) {
+    // int currSum = 0;
+    // int maxSum = Integer.MIN_VALUE;
     // for (int i = 0; i < numbers.length; i++) {
-    // currS = currS + numbers[i];
-    // if (currS < 0) {
-    // currS = 0;
+    // int start = i;
+    // for (int j = i; j < numbers.length; j++) {
+    // int end = j;
+    // currSum = 0;
+    // for (int k = start; k <= end; k++) {
+    // // subarray sum
+    // currSum += numbers[k];
     // }
-    // maxS = Math.max(currS, maxS);
+    // System.out.println(currSum);
+    // if (maxSum < currSum) {
+    // maxSum = currSum;
     // }
-    // System.out.println("Max Sum of Array is: " + maxS);
+    // }
+    // }
+    // System.out.println("maxSum = " + maxSum);
     // }
 
     // public static void main(String[] args) {
-    // int numbers[] = { -2, -3, 4, -1, -1, 1, 5, -3 };
-    // Khadanes(numbers);
-    // }
+    // int numbers[] = { 2, 4, 6, 8, 10 };
+    // MaxSubArraysSum(numbers);
+
     // }
 
+    // ----------------------Kadane's_Algo----------------------
+
+    public static void Khadanes(int numbers[]) {
+        int currS = 0;
+        int maxS = Integer.MIN_VALUE;
+
+        for (int i = 0; i < numbers.length; i++) {
+            currS = currS + numbers[i];
+            if (currS < 0) {
+                currS = 0;
+            }
+            maxS = Math.max(currS, maxS);
+        }
+        System.out.println("Max Sum of Array is: " + maxS);
+    }
+
+    public static void main(String[] args) {
+        int numbers[] = { -2, -3, 4, -1, -1, 1, 5, -3 };
+        Khadanes(numbers);
+    }
 }

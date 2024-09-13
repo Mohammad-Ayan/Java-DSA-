@@ -208,22 +208,56 @@ public class Array {
 
     // ----------------------Kadane's_Algo----------------------
 
-    public static void Khadanes(int numbers[]) {
-        int currS = 0;
-        int maxS = Integer.MIN_VALUE;
+    // public static void Khadanes(int numbers[]) {
+    // int currS = 0;
+    // int maxS = Integer.MIN_VALUE;
 
-        for (int i = 0; i < numbers.length; i++) {
-            currS = currS + numbers[i];
-            if (currS < 0) {
-                currS = 0;
-            }
-            maxS = Math.max(currS, maxS);
+    // for (int i = 0; i < numbers.length; i++) {
+    // currS = currS + numbers[i];
+    // if (currS < 0) {
+    // currS = 0; // CS will be 0 if sum is -ve
+    // }
+    // maxS = Math.max(currS, maxS); //(stored in MS whichever is max {CS or MS})
+    // }
+    // System.out.println("Max Sum of Array is: " + maxS);
+    // }
+
+    // public static void main(String[] args) {
+    // int numbers[] = { -2, -3, 4, -1, -1, 1, 5, -3 };
+    // Khadanes(numbers);
+    // }
+    // }
+
+    // ----------------------Trapping_Rainwater----------------------
+
+    public static int trappedRainwater(int height[]){
+        int n = height.length;
+        // calculate left max boundary - array
+        int leftMax[] = new int [n];
+        leftMax[0] = height[0];
+        for(int i = 1; i<n; i++){
+            leftMax = Math.max(height[i], leftMax[i-1]);   
         }
-        System.out.println("Max Sum of Array is: " + maxS);
+        // calculate right max boundary - array
+        int rightMax[] = new int [n];
+        rightMax[n-1] = height[n-1];
+        for(int i = n-2; i>=n; i--){
+            rightMax = Math.max(height[i], rightMax[i+1]);   
+        }
+
+        int trappedwater = 0;
+        // loop
+        for (int i=0; i<n; i++){
+               // waterLevel = Min (leftmax bound, rightmax bound) 
+            waterLevel = Math.min(leftMax[i], rightMax[i]);
+               // trapped water = waterLevel - height[i]
+            trappedwater += waterLevel - height[i];
+        }
+
+        return trappedwater;
     }
 
     public static void main(String[] args) {
-        int numbers[] = { -2, -3, 4, -1, -1, 1, 5, -3 };
-        Khadanes(numbers);
+        int height[] = { 4, 2, 0, 6, 3, 2, 5 };
     }
 }

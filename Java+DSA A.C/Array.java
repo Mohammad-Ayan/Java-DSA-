@@ -230,34 +230,157 @@ public class Array {
 
     // ----------------------Trapping_Rainwater----------------------
 
-    public static int trappedRainwater(int height[]){
+    // public static int trappedRainWater(int height[]) {
+    // int n = height.length;
+    // // calculate left max boundary - array
+    // int leftMax[] = new int[n];
+    // leftMax[0] = height[0];
+    // for (int i = 1; i < n; i++) {
+    // leftMax[i] = Math.max(height[i], leftMax[i - 1]); // (current height, left
+    // Max height)
+    // }
+    // // calculate right max boundary - array
+    // int rightMax[] = new int[n];
+    // rightMax[n - 1] = height[n - 1];
+    // for (int i = n - 2; i >= 0; i--) {
+    // rightMax[i] = Math.max(height[i], rightMax[i + 1]);
+    // }
+
+    // int trappedWater = 0;
+    // // loop
+    // for (int i = 0; i < n; i++) {
+    // // waterLevel = Min (leftmax bound, rightmax bound)
+    // int waterLevel = Math.min(leftMax[i], rightMax[i]);
+    // // trapped water = waterLevel - height[i]
+    // trappedWater += waterLevel - height[i];
+    // }
+
+    // return trappedWater;
+    // }
+
+    // public static void main(String[] args) {
+    // int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+
+    // System.out.println(trappedRainWater(height));
+    // }
+    // }
+    // ----------------------------Buy & Sell_Stocks-----------------------
+
+    // public static int buyAndSellStock(int prices[]) {
+    // int buyPrice = Integer.MAX_VALUE;
+    // int maxProfit = 0;
+
+    // for (int i = 0; i < prices.length; i++) {
+    // if (buyPrice < prices[i]) { // profit
+    // int profit = prices[i] - buyPrice; // Today's profit
+    // maxProfit = Math.max(maxProfit, profit);
+    // } else {
+    // buyPrice = prices[i];
+    // }
+    // }
+    // return maxProfit;
+    // }
+
+    // public static void main(String[] args) {
+    // int prices[] = { 7, 1, 5, 3, 6, 4 };
+    // System.out.println(buyAndSellStock(prices));
+    // }
+    // }
+
+    // ---Assignment_Question---
+
+    // --Question 1: Given an integer array nums, return true if any value appears
+    // at
+    // least twice in the
+    // array, and return false if every element is distinct.
+
+    // public static boolean ContainsDuplicate(int[] nums) {
+    // for (int i = 0; i < nums.length; i++) {
+    // for (int j = i + 1; j < nums.length; j++) {
+    // if (nums[i] == nums[j]) {
+    // return true;
+    // }
+
+    // }
+    // }
+    // return false;
+
+    // }
+
+    // public static void main(String[] args) {
+    // int nums[] = { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
+    // System.out.println(ContainsDuplicate(nums));
+    // }
+    // }
+
+    // Question 2: to search for a target element in an array that has been rotated
+    // at an unknown pivot.The key aspect is that the array was originally sorted in
+    // ascending order before the rotation.
+    ///////////
+    /// ?
+
+    // ?
+
+    // ?
+
+    // --Question 3: You are given an array prices where prices[i] is
+    // the price of a given stock on the ith day.
+    // Return the maximum profit you can achieve from this transaction.
+    // If you cannot achieve any profit, return 0.
+
+    // public static int maxProfit(int[] prices) {
+    // int BuyPrice = prices[0];
+    // int profit = 0;
+
+    // for (int i = 0; i < prices.length; i++) {
+    // if (BuyPrice < prices[i]) {
+    // profit = Math.max(prices[i] - BuyPrice, profit);
+    // } else {
+    // BuyPrice = prices[i];
+    // }
+    // }
+    // return profit;
+    // }
+
+    // public static void main(String[] args) {
+    // int prices[] = { 7, 1, 5, 3, 6, 4 };
+    // System.out.println(maxProfit(prices));
+    // }
+
+    // --Question 4: Given n non-negative integers representing an elevation map
+    // where
+    // the width of each bar is 1, compute how much water it can trap after raining.
+
+    public static int trappedRainWater(int height[]) { 
         int n = height.length;
-        // calculate left max boundary - array
-        int leftMax[] = new int [n];
+
+        // leftBoundary
+        int leftMax[] = new int[n];
         leftMax[0] = height[0];
-        for(int i = 1; i<n; i++){
-            leftMax = Math.max(height[i], leftMax[i-1]);   
+
+        for (int i=1; i<n; i++){
+            leftMax[i] = Math.max(height[i], leftMax[i-1]);
+           
         }
-        // calculate right max boundary - array
-        int rightMax[] = new int [n];
+         // rightBoundary
+        int rightMax[] = new int[n];
         rightMax[n-1] = height[n-1];
-        for(int i = n-2; i>=n; i--){
-            rightMax = Math.max(height[i], rightMax[i+1]);   
+        for (int i= n-2 ; i>n; i--){
+            rightMax[i] = Math.max(height[i], rightMax[i+1]);
         }
-
-        int trappedwater = 0;
+        int trappedWater = 0;
         // loop
-        for (int i=0; i<n; i++){
-               // waterLevel = Min (leftmax bound, rightmax bound) 
-            waterLevel = Math.min(leftMax[i], rightMax[i]);
-               // trapped water = waterLevel - height[i]
-            trappedwater += waterLevel - height[i];
+        for (int i = 0; i<n; i++){
+            int waterLevel = Math.min(leftMax[i], rightMax[i]);
+            trappedWater += waterLevel - height[i];
         }
-
-        return trappedwater;
+        return trappedWater;
     }
 
     public static void main(String[] args) {
         int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+
+        System.out.println(trappedRainWater(height));
     }
+
 }

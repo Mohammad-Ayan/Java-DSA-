@@ -287,7 +287,7 @@ public class Array {
     // }
     // }
 
-    // ---Assignment_Question---
+    // --------Assignment_Question-------
 
     // --Question 1: Given an integer array nums, return true if any value appears
     // at
@@ -295,7 +295,7 @@ public class Array {
     // array, and return false if every element is distinct.
 
     // public static boolean ContainsDuplicate(int[] nums) {
-    // for (int i = 0; i < nums.length; i++) {
+    // for (int i = 0; i < nums.length-1; i++) {
     // for (int j = i + 1; j < nums.length; j++) {
     // if (nums[i] == nums[j]) {
     // return true;

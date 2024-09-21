@@ -287,7 +287,7 @@ public class Array {
     // }
     // }
 
-    // --------Assignment_Question-------
+    //----------------------- --------Assignment_Question----------------------------------
 
     // --Question 1: Given an integer array nums, return true if any value appears
     // at
@@ -390,4 +390,5 @@ public class Array {
     // nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] +
     // nums[k] == 0.
     // Notice that the solution set must not contain duplicate triplets
+
 }

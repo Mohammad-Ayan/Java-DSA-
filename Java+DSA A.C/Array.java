@@ -316,12 +316,55 @@ public class Array {
     // Question 2: to search for a target element in an array that has been rotated
     // at an unknown pivot.The key aspect is that the array was originally sorted in
     // ascending order before the rotation.
-    ///////////
-    /// ?
 
-    // ?
-
-    // ?
+    public class SearchRotatedSortedArray {
+        public static int search(int[] nums, int target) {
+            int left = 0;
+            int right = nums.length - 1;
+            
+            while (left <= right) {
+                int mid = left + (right - left) / 2;
+                
+                // If the target is found at the middle index
+                if (nums[mid] == target) {
+                    return mid;
+                }
+                
+                // Check if the left side is sorted
+                if (nums[left] <= nums[mid]) {
+                    // If target is within the sorted left side
+                    if (nums[left] <= target && target < nums[mid]) {
+                        right = mid - 1; // Narrow down the search to the left half
+                    } else {
+                        left = mid + 1; // Search in the right half
+                    }
+                }
+                // Else the right side must be sorted
+                else {
+                    // If target is within the sorted right side
+                    if (nums[mid] < target && target <= nums[right]) {
+                        left = mid + 1; // Narrow down the search to the right half
+                    } else {
+                        right = mid - 1; // Search in the left half
+                    }
+                }
+            }
+            
+            // Target is not found in the array
+            return -1;
+        }
+    
+        public static void main(String[] args) {
+            int[] nums = {4, 5, 6, 7, 0, 1, 2};
+            int target = 0;
+            int result = search(nums, target);
+            System.out.println("Index of target " + target + ": " + result);
+            
+            target = 3;
+            result = search(nums, target);
+            System.out.println("Index of target " + target + ": " + result);
+        }
+    }
 
     // --Question 3: You are given an array prices where prices[i] is
     // the price of a given stock on the ith day.
@@ -392,3 +435,6 @@ public class Array {
     // Notice that the solution set must not contain duplicate triplets
 
 }
+
+
+   

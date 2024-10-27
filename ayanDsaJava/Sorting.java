@@ -127,7 +127,7 @@ public class Sorting {
 
         // --sorting
         int j = 0;
-        for (int i = 0; i < count.length; i++) { // frequency Array(iteration)
+        for (int i = 0; i < count.length; i++) {   // frequency Array(iteration)
             while (count[i] > 0) {
                 arr[j] = i;
                 j++;

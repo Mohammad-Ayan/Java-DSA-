@@ -287,7 +287,7 @@ public class Matrices_2D {
                 transpose[j][i] = matrix[i][j];
             }
         }
-        return transpose;
+        return trans;
     }
 
     public static void main(String[] args) {

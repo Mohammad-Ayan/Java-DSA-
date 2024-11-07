@@ -1,1 +1,0 @@
-printArr(arr);

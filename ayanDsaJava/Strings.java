@@ -1,19 +1,21 @@
 public class Strings {
-    // public static void printLetters(String str){
-    // for(int i = 0; i<str.length(); i++){
-    // System.out.print(str.charAt(i)+" ");
-    // }
-    // System.out.println();
-    // }
-    // public static void main(String[] args) {
-    // //concatenation
-    // String firstName = "Shradha";
-    // String lastName = "Khapra";
-    // String fullName = firstName + " " + lastName;
+    public static void printLetters(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            System.out.print(str.charAt(i) + " ");
+        }
+        System.out.println();
+    }
 
-    // printLetters(fullName);
-    // }
-    // }
+    public static void main(String[] args) {
+        // concatenation
+        String firstName = "Shradha";
+        String lastName = "Khapra";
+        String fullName = firstName + " " + lastName;
+
+        printLetters(fullName);
+    }
+
+    }
 
     // -----------------Palindrome-----------------------
 
@@ -163,29 +165,109 @@ public class Strings {
         System.out.println(toUpperCase(str));
     }
 
-    //--------------------String Compression----------------
+    // --------------------String Compression----------------
 
-    public static String compress (string str){
-        String newStr = " ";
+    public static String compress(String str) {
+        String newStr = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            newStr += str.charAt(i); // Add the character to the result string
+            if (count > 1) {
+                newStr += count.toString(); // Add the count if greater than 1
+                // count.toString()--> adds "3" after 'a', making newStr show "a3"
+            }
+        }
+
+        return newStr;
     }
-
 
     public static void main(String[] args) {
-        String str = "aaabbbbccdddd"
+        String str = "aaabbbbccdddd";
+        System.out.println(compress(str));
     }
 
-    // -------------------------------------------Questions---------------------------------------
+    // --------------------Practice_Questions----------------------
 
-    // public static void main(String args[]) {
-    // String str = "ShradhaDidi";
-    // String str1 = "ApnaCollege";
-    // String str2 = "ShradhaDidi";
-    // System.out.println(str.equals(str1) + " " + str.equals(str2));
-    // }
-    // public static void main(String args[]) {
-    // String str = "ApnaCollege".replace("l", "");
-    // System.out.println(str);
-    // }
-    // }
+    // --Ques 1 : Count how many times lowercase vowels occurred in a String entered
+    // by the user
+
+    // import java.util.Arrays;
+
+    public static void main(String[] args) {
+        String str1 = "earth";
+        String str2 = "heart";
+
+        // Convert strings to lowercase for uniform comparison
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+
+        // Check if lengths are the same
+        if (str1.length() == str2.length()) {
+            // Convert strings into char arrays
+            char[] str1charArray = str1.toCharArray();
+            char[] str2charArray = str2.toCharArray();
+
+            // Sort the char arrays
+            Arrays.sort(str1charArray);
+            Arrays.sort(str2charArray);
+
+            // Check if the sorted char arrays are identical
+            boolean result = Arrays.equals(str1charArray, str2charArray);
+
+            if (result) {
+                System.out.println(str1 + " and " + str2 + " are anagrams of each other.");
+            } else {
+                System.out.println(str1 + " and " + str2 + " are not anagrams of each other.");
+            }
+        } else {
+            // Case when lengths are not equal
+            System.out.println(str1 + " and " + str2 + " are not anagrams of each other.");
+        }
+    }
+
+    // --Ques 2 : What will be the output of the following code?
+    public static void main(String args[]) {
+    String str = "ShradhaDidi";
+    String str1 = "ApnaCollege";
+    String str2 = "ShradhaDidi";
+    System.out.println(str.equals(str1) + " " + str.equals(str2));
+    }
+    // Answer: False True
+
+    // --Ques 3 : What will be the output of the following code?
+    public static void main(String args[]) {
+    String str = "ApnaCollege".replace("l", "");
+    System.out.println(str);
+    }
+    // Answer: ApnaCoege
+
+    // --Ques 4 : Determine if 2 Strings are anagrams of each other.
+
+    // --Ques 5 : Search and read about
+    // a. intern( ) method in String
+
+    When you call str.intern() on a String object, Java checks if an identical String
+    already exists in a special memory area called the String pool.
+    If the same String is found there, Java will return a reference to it instead
+    of creating a new String object. If it’s not found, it adds that String to the
+    pool.
+
+    // In simple words: intern() makes sure that identical String objects share the
+    // same
+    // memory space, which can help reduce memory usage when working with many
+    // similar strings.
+
+    // b. StringBuffer
+    //
+    StringBuffer in Java is a type of object used to create and manipulate strings
+    when you need to change or build them frequently. Unlike regular String objects,
+    which are immutable (cannot be changed once created), StringBuffer allows modifications
+    directly without creating new objects. This makes it more efficient for tasks
+    like appending, deleting, or inserting characters in a string.
 
 }

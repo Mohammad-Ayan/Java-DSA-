@@ -75,6 +75,31 @@ class Pen1 {
     void setTip(int newTip) {
         tip = newTip;
     }
+
+    // --------------Constructor------------
+
+    public static void main(String[] args) {
+        Students s3 = new Students();
+        Students s4 = new Students("Ayan");
+        Students s5 = new Students(1234);
+      
+
+    }
 }
 
-//--------------
+class Students {
+    String name;
+    int roll;
+
+    Students() {
+        System.out.println("Constructor is called...");
+    }
+
+    Students(String name) {
+        this.name = name;
+    }
+
+    Students(int roll) {
+        this.roll = roll;
+    }
+}

@@ -104,46 +104,64 @@ public class Oops {
 
     // -----------Inheritance---------------
 
+//     public static void main(String[] args) {
+//         Dog tom = new Dog();
+//         tom.legs = 4;
+//         tom.eat();
+//         System.out.println(tom.legs);
+//     }
+// //}
+
+//     // Base Class
+//     class Animal {
+//         String color;
+
+//         void eat() {
+//             System.out.println("eats");
+//         }
+
+//         void breathe() {
+//             System.out.println("breathes");
+//         }
+//     }
+
+//     //Derived Class
+//     // class Fish extends Animal{
+//     //     int fins;
+
+//     //     void swim(){
+//     //         System.out.println("Swims in water");
+//     //     }
+//     //}
+
+//     //Derived Class
+//     class Mammal extends Animal{
+//         int legs;
+//     }
+
+//     //Derived Class
+//     class Dog extends Mammal{
+//         String breed;
+//     }
+
+//-------------Polymorphism--------------
+//--Function Overloading--
     public static void main(String[] args) {
-        Dog tom = new Dog();
-        tom.legs = 4;
-        tom.eat();
-        System.out.println(tom.legs);
+        Calculator calci = new Calculator();
+        System.out.println(calci.sum(1,2));
+        System.out.println(calci.sum((float)1.5,(float)2.4));
+        System.out.println(calci.sum(1,2, 2));
     }
 }
 
-    // Base Class
-    class Animal {
-        String color;
-
-        void eat() {
-            System.out.println("eats");
+    class Calculator{
+        int sum(int a,  int b){
+            return a + b;
         }
-
-        void breathe() {
-            System.out.println("breathes");
+        float sum(float a,  float b){
+            return a + b;
+        }
+        int sum(int a,  int b, int c){
+            return a + b + c;
         }
     }
-
-    //Derived Class
-    // class Fish extends Animal{
-    //     int fins;
-
-    //     void swim(){
-    //         System.out.println("Swims in water");
-    //     }
-    //}
-
-    //Derived Class
-    class Mammal extends Animal{
-        int legs;
-    }
-
-    //Derived Class
-    class Dog extends Mammal{
-        String breed;
-    }
-
-//-------Poly
-
-}

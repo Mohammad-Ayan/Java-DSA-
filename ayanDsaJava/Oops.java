@@ -145,6 +145,7 @@ public class Oops {
 //     }
 
 //-------------Polymorphism--------------
+
 //--Function Overloading--
 //     public static void main(String[] args) {
 //         Calculator calci = new Calculator();
@@ -168,20 +169,128 @@ public class Oops {
 
 //--Function Overriding--
 
+//     public static void main(String[] args) {
+//         Deer bn = new Deer();
+//         bn.eat();
+//     }
+// }
+
+//     class Animal{
+//         void eat(){
+//             System.out.println("eats anything");
+//         }
+//     }
+//     class Deer extends Animal{
+//         void eat(){
+//             System.out.println("eats grass");
+//         }
+
+// ----------Abstraction---------
+
+//     public static void main(String[] args) {
+//         Horse h = new Horse();
+//         h.eat();
+//         h.walk();
+//         System.out.println(h.color);
+
+//         Mustang myhorse = new Mustang();
+//         // Animal -> Horse -> Mustang (Order of Constructr is being called) 
+//     }
+// }
+
+//     abstract class Animal{
+//         String color;
+
+//         Animal(){
+//             System.out.println("Animal constructor is called");
+//         }
+//         void eat(){
+//             System.out.println("animals eats");
+//         }
+
+//         abstract void walk();
+//     }
+
+//     class Horse extends Animal{
+//         Horse(){
+//             System.out.println("Horse constructor is called" );
+//         }
+//         void changeColor(){
+//             color = "Dark Brown";
+//         }
+//         void walk(){
+//             System.out.println("walks on 4 legs");
+//         }
+//     }
+
+//     class Mustang extends Horse{
+//         Mustang(){
+//             System.out.println("Mustang constructor is called");
+//         }
+//     }
+//     class Chicken extends Animal{
+//         void changeColor(){
+//             color = "Yellow";
+//         }
+//         void walk(){
+//             System.out.println("walks on 2 legs");
+//         }
+//     }
+
+//----------Interface-----------
+
+//     public static void main(String[] args) {
+//         Queen q = new Queen();
+//         q.moves();
+//     }
+// }
+
+//     interface ChessPlayer{
+//         void moves();
+//     }
+
+//     class Queen implements ChessPlayer{
+//         public void moves() {
+//             System.out.println("up, down, left, right, daigonal (all direction)");
+//         }
+//     }
+
+//     class Rook implements ChessPlayer{
+//       public void moves() {
+//             System.out.println("up, down, left, right,");
+//         }
+//     }
+
+//     class King implements ChessPlayer{
+//         public void moves() {
+//             System.out.println("up, down, left, right, daigonal (by 1 step)");
+//          }
+//     }
+
+// --------Implement Multiple Inheritance using Interface--------
+
     public static void main(String[] args) {
-        Deer bn = new Deer();
-        bn.eat();
+        Bear boo = new Bear();
+            boo.flesh();
+            boo.plants();
     }
 }
 
-    class Animal{
-        void eat(){
-            System.out.println("eats anything");
+    interface Carnivores{
+         void flesh();
+    }
+
+    interface Herbivores{
+        void plants();
+
+    }
+     
+    class Bear implements Carnivores, Herbivores {
+        public void flesh(){
+            System.out.println("Eats Flesh");
+        }
+        public void plants(){
+            System.out.println("Eats plants");
         }
     }
-    class Deer extends Animal{
-        void eat(){
-            System.out.println("eats grass");
-        }
-    }
-    
+   

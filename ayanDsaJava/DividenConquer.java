@@ -69,7 +69,7 @@ public class DividenConquer {
     }
 
     public static void quickSort(int arr[], int si, int ei) {
-        if (si >= ei) {  //base case
+        if (si >= ei) { // base case
             return;
         }
 

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "questions",
+            "request": "launch",
+            "mainClass": "Interview_Ques.questions",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "DividenConquer",
             "request": "launch",
             "mainClass": "DividenConquer",

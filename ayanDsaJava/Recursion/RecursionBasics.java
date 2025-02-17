@@ -144,25 +144,59 @@ public class RecursionBasics {
         return totalways;
     }
 
-    // ---------Remove Duplicates in a String------
+    // ---------Remove Duplicates in a String-------
 
     public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
-        if(idx == str.length()) {
+        if (idx == str.length()) {
             System.out.println(newStr); // required Ans
             return;
         }
-
-        //kaam
+        // kaam
+        // Get the current character from the string
         char currChar = str.charAt(idx);
-        if (map[currChar - 'a'] == true) {
+        if (map[currChar - 'a'] == true) { // If the character is already in map, skip it
             // duplicate
-            removeDuplicates(str, idx+1, newStr, map);
-        }else{
-            map[currChar-'a'] = true;
-            removeDuplicates(str, idx+1, newStr.append(currChar), map);
+            removeDuplicates(str, idx + 1, newStr, map);
+        } else { // If it's a new character, mark it as seen
+            map[currChar - 'a'] = true;
+            // Append the character to the new string and move to the next index
+            removeDuplicates(str, idx + 1, newStr.append(currChar), map);
         }
     }
 
+    // ---------Friends Pairing Problem--------
+
+    public static int FriendsPairing(int n) {
+        if (n == 1 || n == 2) {
+            return n;
+        }
+        // Choice
+        // Single
+        int fnm1 = FriendsPairing(n - 1);
+        // Pair
+        int fnm2 = FriendsPairing(n - 2);
+        int pairWays = (n - 1) * fnm2;
+
+        // totalWays
+
+        int toWays = fnm1 + pairWays;
+        return toWays;
+    }
+
+    // ---------Binary String Problem (Consecutive 1s)--------
+
+    public static void printBinString(int n, int lastPlace, String str) {
+
+        if (n == 0) {
+            System.out.println(str);
+            return;
+        }
+        // kaam
+        printBinString(n - 1, 0, str+"0");
+        if (lastPlace == 0) {
+            printBinString(n - 1, 1, str+"1");
+        }
+    }
 
     public static void main(String args[]) {
         // int n = 10;
@@ -174,13 +208,14 @@ public class RecursionBasics {
         // int arr[] = { 2, 7, 3, 4, 3 };
         // System.out.println(firstOcc(arr, 3, 0));
         // System.out.println(lastOcc(arr, 3, 0));
-        // System.out.println(firstOcc(arr, 4, 0));
         // System.out.println(printPower(2, 10));
         // System.out.println(OptimizedPower(2, 10));
         // System.out.println(tilingProblem(3));
-        String str = "appna";
-        removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
 
+        // String str = "appna";
+        // removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+
+        // System.out.println(FriendsPairing(3));
+        printBinString(4, 1, new String (""));
     }
 }
- 

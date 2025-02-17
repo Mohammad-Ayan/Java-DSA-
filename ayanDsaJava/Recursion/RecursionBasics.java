@@ -144,6 +144,26 @@ public class RecursionBasics {
         return totalways;
     }
 
+    // ---------Remove Duplicates in a String------
+
+    public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
+        if(idx == str.length()) {
+            System.out.println(newStr); // required Ans
+            return;
+        }
+
+        //kaam
+        char currChar = str.charAt(idx);
+        if (map[currChar - 'a'] == true) {
+            // duplicate
+            removeDuplicates(str, idx+1, newStr, map);
+        }else{
+            map[currChar-'a'] = true;
+            removeDuplicates(str, idx+1, newStr.append(currChar), map);
+        }
+    }
+
+
     public static void main(String args[]) {
         // int n = 10;
         // printDec(n);
@@ -157,6 +177,10 @@ public class RecursionBasics {
         // System.out.println(firstOcc(arr, 4, 0));
         // System.out.println(printPower(2, 10));
         // System.out.println(OptimizedPower(2, 10));
-        System.out.println(tilingProblem(3));
+        // System.out.println(tilingProblem(3));
+        String str = "appna";
+        removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+
     }
 }
+ 

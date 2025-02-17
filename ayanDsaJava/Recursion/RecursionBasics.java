@@ -24,6 +24,7 @@ public class RecursionBasics {
         printInc(n - 1);
         System.out.print(n + " ");
     }
+    // ---------------Print Factorial of N -----------
 
     public static int fact(int n) {
         if (n == 0) {
@@ -33,6 +34,7 @@ public class RecursionBasics {
         int fn = n * fact(n - 1);
         return fn;
     }
+    // ---------------Print Sum of N natural nos-----------
 
     public static int CalcSum(int n) {
         if (n == 1) {
@@ -42,6 +44,7 @@ public class RecursionBasics {
         int Sn = n + Snm1;
         return Sn;
     }
+    // ---------------Print Fabonacci Series-----------
 
     public static int fib(int n) {
         if (n == 0 || n == 1) {
@@ -52,6 +55,7 @@ public class RecursionBasics {
         int fn = fnm1 + fnm2;
         return fn;
     }
+    // ----------------Array is Sorted or Not-----------------
 
     public static boolean isSorted(int arr[], int i) {
         if (i == arr.length - 1) {
@@ -63,6 +67,8 @@ public class RecursionBasics {
         return isSorted(arr, i + 1);
     }
 
+    // --------------First_Occurance--------------
+
     public static int firstOcc(int arr[], int key, int i) {
         if (i == arr.length) {
             return -1;
@@ -73,6 +79,8 @@ public class RecursionBasics {
 
         return firstOcc(arr, key, i + 1);
     }
+
+    // --------------Last_Occurance--------------
 
     public static int lastOcc(int arr[], int key, int i) {
         if (i == arr.length) {
@@ -100,19 +108,40 @@ public class RecursionBasics {
         return x * printPower(x, n - 1);
     }
 
-    // ---------Print x^n (Optimized)------------
+    // ----------Print x^n (Optimized)------------
 
-    public static int OptimizedPower(int a, int n) {
+    public static int OptimizedPower(int a, int n) { // O(log n)
         if (n == 0) {
             return 1;
         }
 
-        int halfPowerSq =  OptimizedPower(a, n/2) * OptimizedPower(a, n/2);
-        
-       if (n % 2 != 0){
-        halfPowerSq =  a * halfPowerSq;
-       }
-       return halfPowerSq;
+        int halfPower = OptimizedPower(a, n / 2);
+        int halfPowerSq = halfPower * halfPower;
+
+        if (n % 2 != 0) {
+            halfPowerSq = a * halfPowerSq;
+        }
+        return halfPowerSq;
+    }
+
+    // -------------Tiling Problem------------
+
+    public static int tilingProblem(int n) {// 2 x 1 (floor size)
+
+        // base case
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        // kaam
+        // vertical
+        int fnm1 = tilingProblem(n - 1);
+
+        // horizontal
+        int fnm2 = tilingProblem(n - 2);
+
+        // ways
+        int totalways = fnm1 + fnm2;
+        return totalways;
     }
 
     public static void main(String args[]) {
@@ -122,11 +151,12 @@ public class RecursionBasics {
         // System.out.println(fact(n));
         // System.out.println(CalcSum(n));
         // System.out.println(fib(n));
-        int arr[] = { 2, 7, 3, 4, 3 };
+        // int arr[] = { 2, 7, 3, 4, 3 };
         // System.out.println(firstOcc(arr, 3, 0));
         // System.out.println(lastOcc(arr, 3, 0));
         // System.out.println(firstOcc(arr, 4, 0));
         // System.out.println(printPower(2, 10));
-        System.out.println(OptimizedPower(2, 10));
+        // System.out.println(OptimizedPower(2, 10));
+        System.out.println(tilingProblem(3));
     }
 }

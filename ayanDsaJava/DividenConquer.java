@@ -46,24 +46,20 @@ public class DividenConquer {
 
         // Copy temp array back to original array
         for (k = 0, i = si; k < temp.length; k++, i++) {
-            arr[i] = temp[k]; // **Fix: Use temp[k] instead of arr[k]**
+            arr[i] = temp[k];
         }
     }
 
    
     public static void main(String[] args) {
-
-        int arr[] = { 6, 3, 9, 5, 2, 8 };
-        // System.out.println("Original Array:");
-        // printArr(arr);
+        int arr[] = {6, 3, 9, 5, 2, 8};
+        
+        System.out.println("Original Array:");
+        printArray(arr);
 
         mergeSort(arr, 0, arr.length - 1);
 
-        // System.out.println("Sorted Array:");
-        // printArr(arr);
-        // // int arr[] = { 6, 3, 9, 8, 2, 5 };
-        // quickSort(arr, 0, arr.length - 1);
-        // printArr(arr);
-
+        System.out.println("Sorted Array:");
+        printArray(arr);
     }
 }

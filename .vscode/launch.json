@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "isPrime",
+            "request": "launch",
+            "mainClass": "Interview_Questions.isPrime",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "leapYear",
+            "request": "launch",
+            "mainClass": "Interview_Questions.leapYear",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "leapYear",
+            "request": "launch",
+            "mainClass": "leapYear",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "backtracking",
             "request": "launch",
             "mainClass": "Back_Tracking.backtracking",

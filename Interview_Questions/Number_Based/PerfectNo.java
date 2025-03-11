@@ -1,5 +1,4 @@
-package Interview_Questions;
-
+package Interview_Questions.Number_Based;
 import java.util.Scanner;
 
 public class PerfectNo {
@@ -18,7 +17,8 @@ public class PerfectNo {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Number");
         int num = sc.nextInt();
-
+        sc.close();
+        
         if (isPerfect(num)) {
             System.out.println(num + " a perfect Number");
         } else {

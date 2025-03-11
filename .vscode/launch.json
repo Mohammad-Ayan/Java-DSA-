@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Replace_0",
+            "request": "launch",
+            "mainClass": "Interview_Questions.Replace_0",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "addDigits",
             "request": "launch",
             "mainClass": "Interview_Questions.addDigits",

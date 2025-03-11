@@ -1,6 +1,6 @@
-package Interview_Questions;
-
+package Interview_Questions.Number_Based;
 import java.util.Scanner;
+
 
 public class Fabonacci {
     public static void main(String[] args) {

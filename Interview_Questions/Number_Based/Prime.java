@@ -1,7 +1,6 @@
-package Interview_Questions;
+package Interview_Questions.Number_Based;
 
-
-public class isPrime {
+public class Prime {
     public static boolean isPrime(int num) {
         if (num <= 1) {
             return false;

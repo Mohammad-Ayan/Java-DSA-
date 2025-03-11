@@ -1,6 +1,4 @@
-package Interview_Questions;
-
-import java.util.Scanner;
+package Interview_Questions.Number_Based;import java.util.Scanner;
 
 public class armstrongNo {
     public static void main(String[] args) {

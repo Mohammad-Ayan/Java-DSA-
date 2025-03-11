@@ -1,4 +1,4 @@
-package Interview_Questions;
+package Interview_Questions.Number_Based;
 
 import java.util.Scanner;
 
@@ -8,6 +8,8 @@ public class sumNaturalNo {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number n: ");
         int n = sc.nextInt();
+        sc.close();
+        
         int sum = 0;
 
         for (int i = 0; i <= n; i++) {

@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "addDigits",
+            "request": "launch",
+            "mainClass": "Interview_Questions.addDigits",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "sumNaturalNo",
+            "request": "launch",
+            "mainClass": "Interview_Questions.sumNaturalNo",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "Fabonacci",
+            "request": "launch",
+            "mainClass": "Interview_Questions.Fabonacci",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "PerfectNo",
+            "request": "launch",
+            "mainClass": "Interview_Questions.PerfectNo",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "CheckArmstrongNumber",
+            "request": "launch",
+            "mainClass": "Interview_Questions.CheckArmstrongNumber",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "armstrongNo",
+            "request": "launch",
+            "mainClass": "Interview_Questions.armstrongNo",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "isPrime",
             "request": "launch",
             "mainClass": "Interview_Questions.isPrime",

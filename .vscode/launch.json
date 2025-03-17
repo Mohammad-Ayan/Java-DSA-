@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "findDuplicates",
+            "request": "launch",
+            "mainClass": "Interview_Questions.Array_Based.findDuplicates",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
+            "name": "Fabonacci",
+            "request": "launch",
+            "mainClass": "Interview_Questions.Number_Based.Fabonacci",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "Replace_0",
             "request": "launch",
             "mainClass": "Interview_Questions.Replace_0",

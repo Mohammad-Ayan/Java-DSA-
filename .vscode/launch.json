@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "prac",
+            "request": "launch",
+            "mainClass": "prac",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "findDuplicates",
             "request": "launch",
             "mainClass": "Interview_Questions.Array_Based.findDuplicates",

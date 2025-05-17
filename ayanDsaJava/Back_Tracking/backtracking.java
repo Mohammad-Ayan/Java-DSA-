@@ -97,7 +97,7 @@ public class backtracking {
             if(isSafe(board, row, j)){
                 board[row][j] = 'Q';
                 nQueens(board, row + 1); // function call
-                board[row][j] = '.'; // backtracking step
+                board[row][j] = 'x'; // backtracking step
             }
         }
     }
@@ -127,7 +127,7 @@ public class backtracking {
         // initialize
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                board[i][j] = '.';
+                board[i][j] = 'x';
             }
         }
         nQueens(board, 0);

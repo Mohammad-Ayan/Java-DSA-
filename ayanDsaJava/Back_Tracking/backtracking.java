@@ -64,37 +64,39 @@ public class backtracking {
 
     public static boolean isSafe(char board[][], int row, int col) {
         // vertically up
-        for(int i = row; i>=0; i--){
-            if(board[i] [col] == 'Q'){
+        for (int i = row; i >= 0; i--) {
+            if (board[i][col] == 'Q') {
                 return false;
             }
         }
 
         // daigonal left up
-        for (int i = row-1, j = col-1; i>=0 && j>=0; i--, j--){
-            if(board[i][j] == 'Q') {
+        for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+            if (board[i][j] == 'Q') {
                 return false;
             }
         }
 
         // daigonal right
-        for(int i= row-1, j= col+1; i>=0 && j < board.length; i++, j++){
-            if(board[i][j] == 'Q') {
+        for (int i = row - 1, j = col + 1; i >= 0 && j < board.length; i++, j++) {
+            if (board[i][j] == 'Q') {
                 return false;
             }
         }
         return true;
-    }  
+    }
+
     public static void nQueens(char board[][], int row) {
         // base case
         if (row == board.length) {
             printBoard(board);
+            count++;
             return;
         }
 
         // column
         for (int j = 0; j < board.length; j++) {
-            if(isSafe(board, row, j)){
+            if (isSafe(board, row, j)) {
                 board[row][j] = 'Q';
                 nQueens(board, row + 1); // function call
                 board[row][j] = 'x'; // backtracking step
@@ -112,6 +114,7 @@ public class backtracking {
         }
     }
 
+    static int count = 0;
 
     public static void main(String[] args) {
         // int arr[] = new int[5];
@@ -131,5 +134,6 @@ public class backtracking {
             }
         }
         nQueens(board, 0);
+        System.out.println("Total N Queens Possible solutions: " + count);
     }
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RotateArray",
+            "request": "launch",
+            "mainClass": "ArrayLists.Leetcode.RotateArray",
+            "projectName": "Java(DSA)_e28f81a4"
+        },
+        {
+            "type": "java",
             "name": "arraylist_sheet",
             "request": "launch",
             "mainClass": "ArrayLists.arraylist_sheet",

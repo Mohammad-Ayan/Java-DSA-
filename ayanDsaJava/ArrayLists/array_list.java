@@ -63,7 +63,7 @@ public class array_list {
         return false;
     }
 
-    // 2)----Two Pointer Approach O(n)----
+    // 2) ----Two Pointer Approach O(n)----
     public static boolean pairSum1(ArrayList<Integer> list, int target) {
         int lp = 0;
         int rp = list.size() - 1;

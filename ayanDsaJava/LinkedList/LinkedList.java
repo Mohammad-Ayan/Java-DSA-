@@ -122,6 +122,24 @@ public class LinkedList {
         return val;
     }
 
+    // -----Search in a Ll (Iterative)-----
+    public int itrSearch (int key) {  // O(n)
+        Node temp = head;
+        int i = 0;
+
+        while (temp != null) {
+            if (temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        // key not found
+        return -1;
+    }
+
+    
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -134,8 +152,10 @@ public class LinkedList {
         // System.out.println(ll.size);
         ll.removeFirst();
         ll.print();
+
         ll.removeLast();
         ll.print();
 
+        System.out.println(ll.itrSearch(4));
     }
 }

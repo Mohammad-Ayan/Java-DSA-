@@ -123,7 +123,7 @@ public class LinkedList {
     }
 
     // -----Search in a Ll (Iterative)-----
-    public int itrSearch (int key) {  // O(n)
+    public int itrSearch(int key) { // O(n)
         Node temp = head;
         int i = 0;
 
@@ -138,7 +138,28 @@ public class LinkedList {
         return -1;
     }
 
-    
+    // -----Search in a Ll (Recursive)-----
+    public int helper(Node head, int key) { // Actual recursive function
+        if (head == null) {
+            return -1;
+        }
+
+        if (head.data == key) {
+            return 0; // Found the key at current node, return index 0
+        }
+
+        int idx = helper(head.next, key); // Recursive call on rest of list
+
+        if (idx == -1) {
+            return -1;
+        }
+
+        return idx + 1; // Add 1 to idx(because we are 1 node behind)
+    }
+
+    public int recSearch(int key) {
+        return helper(head, key); // head is the start of the list
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -157,5 +178,6 @@ public class LinkedList {
         ll.print();
 
         System.out.println(ll.itrSearch(4));
+        System.out.println(ll.recSearch(3));
     }
 }

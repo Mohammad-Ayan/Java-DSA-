@@ -138,8 +138,8 @@ public class LinkedList {
         return -1;
     }
 
-    // -----Search in a Ll (Recursive)-----
-    public int helper(Node head, int key) { // Actual recursive function
+    // -----Search in a Ll (Recursive)----- 
+    public int helper(Node head, int key) { // O(n) | [Actual recursive function]
         if (head == null) {
             return -1;
         }
@@ -161,6 +161,21 @@ public class LinkedList {
         return helper(head, key); // head is the start of the list
     }
 
+    // -----Reverse a Ll----- 
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -171,13 +186,16 @@ public class LinkedList {
         ll.print();
 
         // System.out.println(ll.size);
-        ll.removeFirst();
+        // ll.removeFirst();
         ll.print();
 
-        ll.removeLast();
+        // ll.removeLast();
         ll.print();
 
         System.out.println(ll.itrSearch(4));
         System.out.println(ll.recSearch(3));
+
+        ll.reverse(); // 5->4->3->2-1
+        ll.print();
     }
 }

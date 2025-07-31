@@ -204,11 +204,12 @@ public class LinkedList {
     }
 
     // --------Check Ll is Palindrome-------
+    //---Slow Fast---
     public Node findMid(Node head){
         Node slow = head;
         Node fast = head;
 
-        while (fast != null && fast.next == null){
+        while (fast != null && fast.next != null){
             slow = slow.next;  // +1
             fast = fast.next.next;  // +2
         }
@@ -216,7 +217,7 @@ public class LinkedList {
     }
 
     public boolean checkPalindrome(){
-        if(head == null && head.next != null){
+        if(head == null && head.next == null){
             return true;
         }
         //step1 - find mid 
@@ -277,9 +278,9 @@ public class LinkedList {
         // for palindrome
         ll.addLast(1);
         ll.addLast(2);
-        ll.addLast(1);
         ll.addLast(2);
         ll.addLast(1);
+        // ll.addLast(1);
 
         ll.print();
         System.out.println(ll.checkPalindrome());

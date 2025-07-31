@@ -1,20 +1,20 @@
 package LinkedList;
 
-// public class Rough {
-//  public static class Node{
-//     int data;
-//     Node next;
-//     public Node(int data){
-//         this.data=data;
-//         this.next=null;
-//     }
-// } 
-// public static  Node head;
-// public static void main(String[] args) {
-// Rough ll= new Rough();
-// ll.head=new Node(3);
-// }
-// }
+public class Rough {
+ public static class Node{
+    int data;
+    Node next;
+    public Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+} 
+public static  Node head;
+public static void main(String[] args) {
+Rough ll= new Rough();
+ll.head=new Node(3);
+}
+}
 
 public static void main(String[] args) {
     int marks[] = { 99, 76, 58 };

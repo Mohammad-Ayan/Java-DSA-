@@ -98,7 +98,7 @@ public class LinkedList {
         return val; // return the remove value
     }
 
-    // -----Remove First in Ll-----
+    // -----Remove Last in Ll-----
     public int removeLast() {
         if (size == 0) {
             System.out.println("linedlist is empty");
@@ -110,9 +110,9 @@ public class LinkedList {
             return val;
         }
         // prev: i = size-2
-        Node prev = head;
+        Node prev = head;   // initiallize
         for (int i = 0; i < size - 2; i++) {
-            prev = prev.next;
+            prev = prev.next;    // itterate
         }
 
         int val = prev.next.data; // tail.data
@@ -295,7 +295,7 @@ public class LinkedList {
         prev.next = null;
     }
 
-    // --------Merge Sort on a LL-------
+    // --------Merge Sort on a LL-------  TC: O(nlogn)
     private Node getMid(Node head){ 
         Node slow = head; 
         Node fast = head.next;  // on 2 node 
@@ -352,6 +352,48 @@ public class LinkedList {
         return merge(newLeft, newRight);
     }
 
+    //--------Zig Zag LL----------
+    public void zigZag(){
+        // find mid
+        Node slow = head;
+        Node fast = head.next;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        // resverse 2nd half
+        Node curr = mid.next; 
+        mid.next = null;
+        Node prev = null;
+        Node next;
+        
+        while (curr != null){ 
+            next = curr.next;   // store next
+            curr.next = prev;   // reverse link
+            prev = curr;        // move prev
+            curr = next;        // move curr
+        }
+
+
+        Node left = head;   // 1st half head
+        Node right = prev;  // head of reversed 2nd half
+        Node nextL, nextR;
+
+        //alternative merge - zigzag 
+        while(left != null && right != null){
+            nextL = left.next;
+            left.next = right;
+            nextR = right.next;
+            right.next = nextL;
+
+            left = nextL; 
+            right = nextR;  
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.addFirst(2);
@@ -397,16 +439,31 @@ public class LinkedList {
         // System.out.println(isCycle());
         // removeCycle();
         // System.out.println(isCycle());
-        
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(3);
-        ll.addFirst(4);
-        ll.addFirst(5);
+
+        // --------Add Remove LL Using JCF-------
+        //LinkedList<Integer> ll = new LinkedList<>();
+
+        // Merge Sort 
+        // ll.addFirst(1);
+        // ll.addFirst(2);
+        // ll.addFirst(3);
+        // ll.addFirst(4);
+        // ll.addFirst(5);
         // 5-> 4-> 3-> 2-> 1
 
+        // ll.print();
+        // ll.head = ll.mergeSort(ll.head);
+        // ll.print();
+
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        // 1-> 2-> 3-> 4-> 5
+
         ll.print();
-        ll.head = ll.mergeSort(ll.head);
+        ll.zigZag();
         ll.print();
     }
 }

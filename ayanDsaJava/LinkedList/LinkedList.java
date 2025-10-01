@@ -110,9 +110,9 @@ public class LinkedList {
             return val;
         }
         // prev: i = size-2
-        Node prev = head;   // initiallize
+        Node prev = head; // initiallize
         for (int i = 0; i < size - 2; i++) {
-            prev = prev.next;    // itterate
+            prev = prev.next; // itterate
         }
 
         int val = prev.next.data; // tail.data
@@ -287,7 +287,7 @@ public class LinkedList {
         slow = head;
         Node prev = null; // last node
         while (slow != fast) {
-            prev = fast;  // keep track of prev node
+            prev = fast; // keep track of prev node
             slow = slow.next;
             fast = fast.next;
         }
@@ -295,39 +295,39 @@ public class LinkedList {
         prev.next = null;
     }
 
-    // --------Merge Sort on a LL-------  TC: O(nlogn)
-    private Node getMid(Node head){ 
-        Node slow = head; 
-        Node fast = head.next;  // on 2 node 
+    // --------Merge Sort on a LL------- TC: O(nlogn)
+    private Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head.next; // on 2 node
 
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow;  // mid Node
+        return slow; // mid Node
     }
 
-    private Node merge (Node head1, Node head2){
+    private Node merge(Node head1, Node head2) {
         Node mergedLL = new Node(-1);
-        Node temp = mergedLL;   
+        Node temp = mergedLL;
 
-        while(head1 != null && head2 != null){
-            if(head1.data <= head2.data){
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
                 temp.next = head1;
                 head1 = head1.next;
-            }else{
+            } else {
                 temp.next = head2;
                 head2 = head2.next;
             }
             temp = temp.next;
         }
 
-        while (head1 != null){
+        while (head1 != null) {
             temp.next = head1;
             head1 = head1.next;
             temp = temp.next;
         }
-        while (head2 != null){
+        while (head2 != null) {
             temp.next = head2;
             head2 = head2.next;
             temp = temp.next;
@@ -336,63 +336,145 @@ public class LinkedList {
     }
 
     public Node mergeSort(Node head) {
-        if(head == null || head.next == null ){
+        if (head == null || head.next == null) {
             return head;
         }
-        //find mid
+        // find mid
         Node mid = getMid(head);
 
-        //left & right MS
+        // left & right MS
         Node rightHead = mid.next;
         mid.next = null;
         Node newLeft = mergeSort(head);
         Node newRight = mergeSort(rightHead);
 
-        //merge
+        // merge
         return merge(newLeft, newRight);
     }
 
-    //--------Zig Zag LL----------
-    public void zigZag(){
+    // --------Zig Zag LL----------
+    public void zigZag() {
         // find mid
         Node slow = head;
         Node fast = head.next;
 
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         Node mid = slow;
 
         // resverse 2nd half
-        Node curr = mid.next; 
+        Node curr = mid.next;
         mid.next = null;
         Node prev = null;
         Node next;
-        
-        while (curr != null){ 
-            next = curr.next;   // store next
-            curr.next = prev;   // reverse link
-            prev = curr;        // move prev
-            curr = next;        // move curr
+
+        while (curr != null) {
+            next = curr.next; // store next
+            curr.next = prev; // reverse link
+            prev = curr; // move prev
+            curr = next; // move curr
         }
 
-
-        Node left = head;   // 1st half head
-        Node right = prev;  // head of reversed 2nd half
+        Node left = head; // 1st half head
+        Node right = prev; // head of reversed 2nd half
         Node nextL, nextR;
 
-        //alternative merge - zigzag 
-        while(left != null && right != null){
+        // alternative merge - zigzag
+        while (left != null && right != null) {
             nextL = left.next;
             left.next = right;
             nextR = right.next;
             right.next = nextL;
 
-            left = nextL; 
-            right = nextR;  
+            left = nextL;
+            right = nextR;
         }
     }
+
+    // ----------Doubly LL----------
+    public class DoubleLL {
+        public static class Node {
+            int data;
+            Node next;
+            Node prev;
+
+            public Node(int data) {
+                this.data = data;
+                this.prev = null;
+                this.next = null;
+            }
+        }
+
+        public static Node head;
+        public static Node tail;
+        public static int size;
+
+        // ---add - addFirst
+        public void addfirst(int data) {
+            Node newNode = new Node(data);
+            size++;
+            if (head == null) {
+                head = tail = newNode;
+                return;
+            }
+
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+
+        // print
+        public void print() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + "<->");
+                temp = temp.next;
+            }
+            System.out.print("null");
+        }
+
+        // ---remove - removeFirst
+        public int removeFirst() {
+            if(head == null){
+                System.out.println("DLL is empty");
+                return Integer.MIN_VALUE; // -1
+            }
+
+            if (size == 1){
+                int val = head.data;
+                head = tail = null;
+                size--;
+                return val;
+            }
+
+            int val = head.data;
+            head = head.next;
+            head.prev = null;
+            size--;
+            return val;
+        }
+
+        // -------Reverse a DLL-------
+        public void reverse(){
+            Node curr = head;
+            Node prev = null;
+            Node next;
+
+            while(curr != null){
+                next = curr.next;
+                curr.next = prev;
+                curr.prev = next;
+
+                prev = curr;
+                curr = next;
+            }
+            head = prev;
+        }
+
+    }
+
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -441,29 +523,45 @@ public class LinkedList {
         // System.out.println(isCycle());
 
         // --------Add Remove LL Using JCF-------
-        //LinkedList<Integer> ll = new LinkedList<>();
+        // LinkedList<Integer> ll = new LinkedList<>();
 
-        // Merge Sort 
+        // Merge Sort
         // ll.addFirst(1);
         // ll.addFirst(2);
         // ll.addFirst(3);
         // ll.addFirst(4);
         // ll.addFirst(5);
-        // 5-> 4-> 3-> 2-> 1
+        // // 5-> 4-> 3-> 2-> 1
 
         // ll.print();
         // ll.head = ll.mergeSort(ll.head);
         // ll.print();
 
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.addLast(5);
-        // 1-> 2-> 3-> 4-> 5
+        // // Zig Zag
+        // ll.addLast(1);
+        // ll.addLast(2);
+        // ll.addLast(3);
+        // ll.addLast(4);
+        // ll.addLast(5);
+        // // 1-> 2-> 3-> 4-> 5
 
-        ll.print();
-        ll.zigZag();
-        ll.print();
+        // ll.print();
+        // ll.zigZag();
+        // ll.print();
+
+        DoubleLL dll = ll.new DoubleLL();
+        dll.addfirst(3);
+        dll.addfirst(2);
+        dll.addfirst(1);
+
+        dll.print(); // Output: 1<->2<->3<->null
+        System.out.println(" "+ "(Size: "+ dll.size +")");
+
+        // dll.removeFirst();
+        // dll.print();
+        // System.out.println(" "+ "(Size: "+ dll.size +")");
+
+        dll.reverse();
+        dll.print();
     }
 }

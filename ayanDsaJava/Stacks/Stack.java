@@ -29,7 +29,7 @@ public class Stack {
 
         // peek
         public static int peek() {
-            if (isEmpty()) { // if stack isd
+            if (isEmpty()) { // if stack is empty
                 return -1;
             }
             return list.get(list.size() - 1); // O(1) [top = last element of list]

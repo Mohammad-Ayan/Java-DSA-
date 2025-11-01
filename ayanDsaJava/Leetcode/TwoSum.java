@@ -2,6 +2,7 @@ package Leetcode;
 
 import java.util.HashMap;
 
+// 1
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>(); // value -> index
@@ -16,6 +17,6 @@ public class TwoSum {
             map.put(nums[i], i); // store current number with its index
         }
 
-        return new int[] {}; // if no pair found
+        return new int[] {}; // if no pair found (empty)
     }
 }
